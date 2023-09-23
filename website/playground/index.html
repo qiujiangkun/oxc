@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="The JavaScript Oxidation Compiler Playground">
     <title>Oxc - The JavaScript Oxidation Compiler Playground</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oxc Playground">
+    <meta name="twitter:description" content="The JavaScript Oxidation Compiler Playground">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Boshen/oxc-assets/main/logo-round.png">
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Boshen/oxc-assets/main/oxc.ico">
     <style>
       body { font-family: monospace; font-size: 16px; margin: 0 }
       button { cursor: pointer }
       label { display: inline-flex; align-items: center; cursor: pointer; user-select: none; }
       .cm-editor { height: 100%; }
-      #logo { display: flex; justify-content: center; }
-      #logo > img { margin-right: .5em; }
+      #logo { display: flex; justify-content: center; color: white; text-decoration: none; margin-right: 5px; }
+      #logo img { margin-right: .5em; }
+      /*
+      #logo a { display: flex; justify-content: center; color: white; text-decoration: none; }
+      */
       #loading { background: white; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; justify-content: center; align-items: center; }
       #container { display: flex; height: 100vh; }
       #left { display: flex; flex: 1; flex-direction: column; border-right: 1px solid #444 }
@@ -35,7 +42,10 @@
     <div id="container">
       <div id="left">
         <div class="controls">
-          <div id="logo"><img height="100%" width="20" src="https://raw.githubusercontent.com/Boshen/oxc-assets/main/oxc.ico" alt="logo"></img><span>Oxc</span></div>
+          <div>
+            <a id="logo" href="https://github.com/web-infra-dev/oxc" target="_blank" rel="noreferrer">
+              <img height="100%" width="20" src="https://raw.githubusercontent.com/Boshen/oxc-assets/main/oxc.ico" alt="logo"></img><span>Oxc</span></div>
+            </a>
           <div>
             <label id="type-check">Type Check (experimental)<input id="type-check-checkbox" type="checkbox"></label>
             <label id="syntax">Check Syntax<input id="syntax-checkbox" type="checkbox" checked></label>

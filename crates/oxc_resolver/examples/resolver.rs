@@ -18,7 +18,10 @@ fn main() {
     println!("request: {request}");
 
     let options = ResolveOptions {
-        alias: vec![("/asdf".into(), vec![AliasValue::Path("./test.js".into())])],
+        modules: vec![
+            "node_modules".into(),
+            "/Users/bytedance/github/modern.js/tests/integration/source-code-build/app/node_modules".into(),
+        ],
         ..ResolveOptions::default()
     };
 

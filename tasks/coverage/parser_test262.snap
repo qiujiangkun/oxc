@@ -1,7 +1,7 @@
 parser_test262 Summary:
 AST Parsed     : 44219/44219 (100.00%)
-Positive Passed: 44219/44219 (100.00%)
-Negative Passed: 3919/3947 (99.29%)
+Positive Passed: 44177/44219 (99.91%)
+Negative Passed: 3883/3947 (98.38%)
 Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-from-u-to-v-01.js"
 Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-from-u-to-v-02.js"
 Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-from-u-to-v-03.js"
@@ -30,6 +30,630 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
 Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-from-u-to-v-26.js"
 Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-from-u-to-v-27.js"
 Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-from-u-to-v-28.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/fn-scope-var-name-redeclaration-attempt-with-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/function-declaration-attempt-to-redeclare-with-var-declaration-nested-in-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/function-name-redeclaration-attempt-with-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/function-name-redeclaration-attempt-with-var.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-async-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-async-generator.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-class.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-const.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-generator.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-let.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-async-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-async-generator.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-class.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-const.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-generator.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-let.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/var-name-redeclaration-attempt-with-function.js"
+Expect Syntax Error: "language/block-scope/syntax/redeclaration/var-redeclaration-attempt-after-function.js"
+Expect Syntax Error: "language/expressions/function/name-arguments-strict-body.js"
+Expect Syntax Error: "language/expressions/function/name-eval-strict-body.js"
+Expect Syntax Error: "language/module-code/early-dup-top-function.js"
+Expect Syntax Error: "language/module-code/parse-err-hoist-lex-fun.js"
+Expect Syntax Error: "language/statements/for/head-const-bound-names-in-stmt.js"
+Expect Syntax Error: "language/statements/for/head-let-bound-names-in-stmt.js"
+Expect Syntax Error: "language/statements/for-in/head-const-bound-names-in-stmt.js"
+Expect Syntax Error: "language/statements/for-in/head-let-bound-names-in-stmt.js"
+Expect Syntax Error: "language/statements/for-of/head-const-bound-names-in-stmt.js"
+Expect Syntax Error: "language/statements/for-of/head-let-bound-names-in-stmt.js"
+Expect Syntax Error: "language/statements/function/name-arguments-strict-body.js"
+Expect Syntax Error: "language/statements/function/name-eval-strict-body.js"
+Expect Syntax Error: "language/statements/switch/syntax/redeclaration/function-name-redeclaration-attempt-with-function.js"
+Expect Syntax Error: "language/statements/switch/syntax/redeclaration/function-name-redeclaration-attempt-with-var.js"
+Expect Syntax Error: "language/statements/switch/syntax/redeclaration/var-name-redeclaration-attempt-with-function.js"
+Expect Syntax Error: "language/statements/try/early-catch-function.js"
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err-block.js:37:1]
+ 37 │   {
+ 38 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 39 │ 
+ 40 │   if (true) function f() {  } else function _f() {}
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 41 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err-switch.js:38:1]
+ 38 │     default:
+ 39 │       let f;
+    ·           ┬
+    ·           ╰── `f` has already been declared here
+ 40 │ 
+ 41 │   if (true) function f() {  } else function _f() {}
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 42 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err-try.js:48:1]
+ 48 │     throw {};
+ 49 │   } catch ({ f }) {
+    ·              ┬
+    ·              ╰── `f` has already been declared here
+ 50 │ 
+ 51 │   if (true) function f() {  } else function _f() {}
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 52 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-a-func-skip-early-err.js:28:1]
+ 28 │ (function() {
+ 29 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 30 │   init = f;
+ 31 │ 
+ 32 │   if (true) function f() {  } else function _f() {}
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 33 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err-block.js:37:1]
+ 37 │   {
+ 38 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 39 │ 
+ 40 │   if (false) function _f() {} else function f() {  }
+    ·                                             ┬
+    ·                                             ╰── It can not be redeclared here
+ 41 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err-switch.js:38:1]
+ 38 │     default:
+ 39 │       let f;
+    ·           ┬
+    ·           ╰── `f` has already been declared here
+ 40 │ 
+ 41 │   if (false) function _f() {} else function f() {  }
+    ·                                             ┬
+    ·                                             ╰── It can not be redeclared here
+ 42 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err-try.js:48:1]
+ 48 │     throw {};
+ 49 │   } catch ({ f }) {
+    ·              ┬
+    ·              ╰── `f` has already been declared here
+ 50 │ 
+ 51 │   if (false) function _f() {} else function f() {  }
+    ·                                             ┬
+    ·                                             ╰── It can not be redeclared here
+ 52 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-decl-b-func-skip-early-err.js:28:1]
+ 28 │ (function() {
+ 29 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 30 │   init = f;
+ 31 │ 
+ 32 │   if (false) function _f() {} else function f() {  }
+    ·                                             ┬
+    ·                                             ╰── It can not be redeclared here
+ 33 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-stmt-func-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-stmt-func-skip-early-err-block.js:37:1]
+ 37 │   {
+ 38 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 39 │ 
+ 40 │   if (true) function f() {  } else ;
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 41 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-stmt-func-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-stmt-func-skip-early-err-switch.js:38:1]
+ 38 │     default:
+ 39 │       let f;
+    ·           ┬
+    ·           ╰── `f` has already been declared here
+ 40 │ 
+ 41 │   if (true) function f() {  } else ;
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 42 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-stmt-func-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-stmt-func-skip-early-err-try.js:48:1]
+ 48 │     throw {};
+ 49 │   } catch ({ f }) {
+    ·              ┬
+    ·              ╰── `f` has already been declared here
+ 50 │ 
+ 51 │   if (true) function f() {  } else ;
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 52 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-else-stmt-func-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-else-stmt-func-skip-early-err.js:28:1]
+ 28 │ (function() {
+ 29 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 30 │   init = f;
+ 31 │ 
+ 32 │   if (true) function f() {  } else ;
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 33 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-no-else-func-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-no-else-func-skip-early-err-block.js:37:1]
+ 37 │   {
+ 38 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 39 │ 
+ 40 │   if (true) function f() {  }
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 41 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-no-else-func-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-no-else-func-skip-early-err-switch.js:38:1]
+ 38 │     default:
+ 39 │       let f;
+    ·           ┬
+    ·           ╰── `f` has already been declared here
+ 40 │ 
+ 41 │   if (true) function f() {  }
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 42 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-no-else-func-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-no-else-func-skip-early-err-try.js:48:1]
+ 48 │     throw {};
+ 49 │   } catch ({ f }) {
+    ·              ┬
+    ·              ╰── `f` has already been declared here
+ 50 │ 
+ 51 │   if (true) function f() {  }
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 52 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-decl-no-else-func-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-decl-no-else-func-skip-early-err.js:28:1]
+ 28 │ (function() {
+ 29 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 30 │   init = f;
+ 31 │ 
+ 32 │   if (true) function f() {  }
+    ·                      ┬
+    ·                      ╰── It can not be redeclared here
+ 33 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-stmt-else-decl-func-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-stmt-else-decl-func-skip-early-err-block.js:37:1]
+ 37 │   {
+ 38 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 39 │ 
+ 40 │   if (false) ; else function f() {  }
+    ·                              ┬
+    ·                              ╰── It can not be redeclared here
+ 41 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-stmt-else-decl-func-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-stmt-else-decl-func-skip-early-err-switch.js:38:1]
+ 38 │     default:
+ 39 │       let f;
+    ·           ┬
+    ·           ╰── `f` has already been declared here
+ 40 │ 
+ 41 │   if (false) ; else function f() {  }
+    ·                              ┬
+    ·                              ╰── It can not be redeclared here
+ 42 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-stmt-else-decl-func-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-stmt-else-decl-func-skip-early-err-try.js:48:1]
+ 48 │     throw {};
+ 49 │   } catch ({ f }) {
+    ·              ┬
+    ·              ╰── `f` has already been declared here
+ 50 │ 
+ 51 │   if (false) ; else function f() {  }
+    ·                              ┬
+    ·                              ╰── It can not be redeclared here
+ 52 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/function-code/if-stmt-else-decl-func-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/function-code/if-stmt-else-decl-func-skip-early-err.js:28:1]
+ 28 │ (function() {
+ 29 │   let f = 123;
+    ·       ┬
+    ·       ╰── `f` has already been declared here
+ 30 │   init = f;
+ 31 │ 
+ 32 │   if (false) ; else function f() {  }
+    ·                              ┬
+    ·                              ╰── It can not be redeclared here
+ 33 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err-block.js:35:1]
+ 35 │ {
+ 36 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 37 │ 
+ 38 │ if (true) function f() {  } else function _f() {}
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 39 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err-switch.js:36:1]
+ 36 │   default:
+ 37 │     let f;
+    ·         ┬
+    ·         ╰── `f` has already been declared here
+ 38 │ 
+ 39 │ if (true) function f() {  } else function _f() {}
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 40 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err-try.js:45:1]
+ 45 │   throw {};
+ 46 │ } catch ({ f }) {
+    ·            ┬
+    ·            ╰── `f` has already been declared here
+ 47 │ 
+ 48 │ if (true) function f() {  } else function _f() {}
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 49 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-a-global-skip-early-err.js:25:1]
+ 25 │ ---*/
+ 26 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 27 │ assert.sameValue(f, 123, 'binding is not initialized to `undefined`');
+ 28 │ 
+ 29 │ if (true) function f() {  } else function _f() {}
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 30 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err-block.js:35:1]
+ 35 │ {
+ 36 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 37 │ 
+ 38 │ if (false) function _f() {} else function f() {  }
+    ·                                           ┬
+    ·                                           ╰── It can not be redeclared here
+ 39 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err-switch.js:36:1]
+ 36 │   default:
+ 37 │     let f;
+    ·         ┬
+    ·         ╰── `f` has already been declared here
+ 38 │ 
+ 39 │ if (false) function _f() {} else function f() {  }
+    ·                                           ┬
+    ·                                           ╰── It can not be redeclared here
+ 40 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err-try.js:45:1]
+ 45 │   throw {};
+ 46 │ } catch ({ f }) {
+    ·            ┬
+    ·            ╰── `f` has already been declared here
+ 47 │ 
+ 48 │ if (false) function _f() {} else function f() {  }
+    ·                                           ┬
+    ·                                           ╰── It can not be redeclared here
+ 49 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-decl-b-global-skip-early-err.js:25:1]
+ 25 │ ---*/
+ 26 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 27 │ assert.sameValue(f, 123, 'binding is not initialized to `undefined`');
+ 28 │ 
+ 29 │ if (false) function _f() {} else function f() {  }
+    ·                                           ┬
+    ·                                           ╰── It can not be redeclared here
+ 30 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-stmt-global-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-stmt-global-skip-early-err-block.js:35:1]
+ 35 │ {
+ 36 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 37 │ 
+ 38 │ if (true) function f() {  } else ;
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 39 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-stmt-global-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-stmt-global-skip-early-err-switch.js:36:1]
+ 36 │   default:
+ 37 │     let f;
+    ·         ┬
+    ·         ╰── `f` has already been declared here
+ 38 │ 
+ 39 │ if (true) function f() {  } else ;
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 40 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-stmt-global-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-stmt-global-skip-early-err-try.js:45:1]
+ 45 │   throw {};
+ 46 │ } catch ({ f }) {
+    ·            ┬
+    ·            ╰── `f` has already been declared here
+ 47 │ 
+ 48 │ if (true) function f() {  } else ;
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 49 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-else-stmt-global-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-else-stmt-global-skip-early-err.js:25:1]
+ 25 │ ---*/
+ 26 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 27 │ assert.sameValue(f, 123, 'binding is not initialized to `undefined`');
+ 28 │ 
+ 29 │ if (true) function f() {  } else ;
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 30 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-no-else-global-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-no-else-global-skip-early-err-block.js:35:1]
+ 35 │ {
+ 36 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 37 │ 
+ 38 │ if (true) function f() {  }
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 39 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-no-else-global-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-no-else-global-skip-early-err-switch.js:36:1]
+ 36 │   default:
+ 37 │     let f;
+    ·         ┬
+    ·         ╰── `f` has already been declared here
+ 38 │ 
+ 39 │ if (true) function f() {  }
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 40 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-no-else-global-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-no-else-global-skip-early-err-try.js:45:1]
+ 45 │   throw {};
+ 46 │ } catch ({ f }) {
+    ·            ┬
+    ·            ╰── `f` has already been declared here
+ 47 │ 
+ 48 │ if (true) function f() {  }
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 49 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-decl-no-else-global-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-decl-no-else-global-skip-early-err.js:25:1]
+ 25 │ ---*/
+ 26 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 27 │ assert.sameValue(f, 123, 'binding is not initialized to `undefined`');
+ 28 │ 
+ 29 │ if (true) function f() {  }
+    ·                    ┬
+    ·                    ╰── It can not be redeclared here
+ 30 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-stmt-else-decl-global-skip-early-err-block.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-stmt-else-decl-global-skip-early-err-block.js:35:1]
+ 35 │ {
+ 36 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 37 │ 
+ 38 │ if (false) ; else function f() {  }
+    ·                            ┬
+    ·                            ╰── It can not be redeclared here
+ 39 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-stmt-else-decl-global-skip-early-err-switch.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-stmt-else-decl-global-skip-early-err-switch.js:36:1]
+ 36 │   default:
+ 37 │     let f;
+    ·         ┬
+    ·         ╰── `f` has already been declared here
+ 38 │ 
+ 39 │ if (false) ; else function f() {  }
+    ·                            ┬
+    ·                            ╰── It can not be redeclared here
+ 40 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-stmt-else-decl-global-skip-early-err-try.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-stmt-else-decl-global-skip-early-err-try.js:45:1]
+ 45 │   throw {};
+ 46 │ } catch ({ f }) {
+    ·            ┬
+    ·            ╰── `f` has already been declared here
+ 47 │ 
+ 48 │ if (false) ; else function f() {  }
+    ·                            ┬
+    ·                            ╰── It can not be redeclared here
+ 49 │ 
+    ╰────
+
+Expect to Parse: "annexB/language/global-code/if-stmt-else-decl-global-skip-early-err.js"
+  × Identifier `f` has already been declared
+    ╭─[annexB/language/global-code/if-stmt-else-decl-global-skip-early-err.js:25:1]
+ 25 │ ---*/
+ 26 │ let f = 123;
+    ·     ┬
+    ·     ╰── `f` has already been declared here
+ 27 │ assert.sameValue(f, 123, 'binding is not initialized to `undefined`');
+ 28 │ 
+ 29 │ if (false) ; else function f() {  }
+    ·                            ┬
+    ·                            ╰── It can not be redeclared here
+ 30 │ 
+    ╰────
+
+Expect to Parse: "language/expressions/function/static-init-await-binding.js"
+  × Cannot use await in class static initialization block
+    ╭─[language/expressions/function/static-init-await-binding.js:15:1]
+ 15 │   static {
+ 16 │     (function await(await) {});
+    ·               ─────
+ 17 │   }
+    ╰────
+
+Expect to Parse: "language/expressions/generators/static-init-await-binding.js"
+  × Cannot use await in class static initialization block
+    ╭─[language/expressions/generators/static-init-await-binding.js:15:1]
+ 15 │   static {
+ 16 │     (function * await (await) {});
+    ·                 ─────
+ 17 │   }
+    ╰────
+
   × '0'-prefixed octal literals and octal escape sequences are deprecated
     ╭─[annexB/language/expressions/template-literal/legacy-octal-escape-sequence-strict.js:17:1]
  17 │ 
@@ -803,16 +1427,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/fn-scope-var-name-redeclaration-attempt-with-function.js:22:1]
- 22 │ function x() {
- 23 │   { function f() {}; var f; }
-    ·              ┬           ┬
-    ·              │           ╰── It can not be redeclared here
-    ·              ╰── `f` has already been declared here
- 24 │ }
-    ╰────
-
-  × Identifier `f` has already been declared
     ╭─[language/block-scope/syntax/redeclaration/fn-scope-var-name-redeclaration-attempt-with-generator.js:23:1]
  23 │ function x() {
  24 │   { function* f() {}; var f; }
@@ -830,21 +1444,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·         │      ╰── It can not be redeclared here
     ·         ╰── `f` has already been declared here
  24 │ }
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/function-declaration-attempt-to-redeclare-with-var-declaration-nested-in-function.js:23:1]
- 23 │         // A lexically declared function declaration.
- 24 │         function f() {}
-    ·                  ┬
-    ·                  ╰── `f` has already been declared here
- 25 │ 
- 26 │         // An inner block-statement with a variable-declared name.
- 27 │         {
- 28 │             var f;
-    ·                 ┬
-    ·                 ╰── It can not be redeclared here
- 29 │         }
     ╰────
 
   × Identifier `f` has already been declared
@@ -884,15 +1483,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/function-name-redeclaration-attempt-with-function.js:21:1]
- 21 │ 
- 22 │ { function f() {} function f() {} }
-    ·            ┬               ┬
-    ·            │               ╰── It can not be redeclared here
-    ·            ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
     ╭─[language/block-scope/syntax/redeclaration/function-name-redeclaration-attempt-with-generator.js:22:1]
  22 │ 
  23 │ { function f() {} function* f() {} }
@@ -905,15 +1495,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╭─[language/block-scope/syntax/redeclaration/function-name-redeclaration-attempt-with-let.js:21:1]
  21 │ 
  22 │ { function f() {} let f }
-    ·            ┬          ┬
-    ·            │          ╰── It can not be redeclared here
-    ·            ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/function-name-redeclaration-attempt-with-var.js:21:1]
- 21 │ 
- 22 │ { function f() {} var f }
     ·            ┬          ┬
     ·            │          ╰── It can not be redeclared here
     ·            ╰── `f` has already been declared here
@@ -989,132 +1570,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·             ┬          ┬
     ·             │          ╰── It can not be redeclared here
     ·             ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-async-function.js:38:1]
- 38 │ 
- 39 │ { { var f; } async function f() {}; }
-    ·         ┬                   ┬
-    ·         │                   ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-async-generator.js:38:1]
- 38 │ 
- 39 │ { { var f; } async function* f() {}; }
-    ·         ┬                    ┬
-    ·         │                    ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-class.js:37:1]
- 37 │ 
- 38 │ { { var f; } class f {}; }
-    ·         ┬          ┬
-    ·         │          ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-const.js:37:1]
- 37 │ 
- 38 │ { { var f; } const f = 0; }
-    ·         ┬          ┬
-    ·         │          ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-function.js:37:1]
- 37 │ 
- 38 │ { { var f; } function f() {} }
-    ·         ┬             ┬
-    ·         │             ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-generator.js:38:1]
- 38 │ 
- 39 │ { { var f; } function* f() {}; }
-    ·         ┬              ┬
-    ·         │              ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-name-redeclaration-attempt-with-let.js:37:1]
- 37 │ 
- 38 │ { { var f; } let f; }
-    ·         ┬        ┬
-    ·         │        ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-async-function.js:38:1]
- 38 │ 
- 39 │ { async function f() {}; { var f; } }
-    ·                  ┬             ┬
-    ·                  │             ╰── It can not be redeclared here
-    ·                  ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-async-generator.js:38:1]
- 38 │ 
- 39 │ { async function* f() {}; { var f; } }
-    ·                   ┬             ┬
-    ·                   │             ╰── It can not be redeclared here
-    ·                   ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-class.js:37:1]
- 37 │ 
- 38 │ { class f {}; { var f; } }
-    ·         ┬           ┬
-    ·         │           ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-const.js:37:1]
- 37 │ 
- 38 │ { const f = 0; { var f; } }
-    ·         ┬            ┬
-    ·         │            ╰── It can not be redeclared here
-    ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-function.js:37:1]
- 37 │ 
- 38 │ { function f() {} { var f; } }
-    ·            ┬            ┬
-    ·            │            ╰── It can not be redeclared here
-    ·            ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-generator.js:38:1]
- 38 │ 
- 39 │ { function* f() {}; { var f; } }
-    ·             ┬             ┬
-    ·             │             ╰── It can not be redeclared here
-    ·             ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/inner-block-var-redeclaration-attempt-after-let.js:37:1]
- 37 │ 
- 38 │ { let f; { var f; } }
-    ·       ┬        ┬
-    ·       │        ╰── It can not be redeclared here
-    ·       ╰── `f` has already been declared here
     ╰────
 
   × Identifier `f` has already been declared
@@ -1226,15 +1681,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/var-name-redeclaration-attempt-with-function.js:21:1]
- 21 │ 
- 22 │ { var f; function f() {} }
-    ·       ┬           ┬
-    ·       │           ╰── It can not be redeclared here
-    ·       ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
     ╭─[language/block-scope/syntax/redeclaration/var-name-redeclaration-attempt-with-generator.js:22:1]
  22 │ 
  23 │ { var f; function* f() {} }
@@ -1286,15 +1732,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·         ┬          ┬
     ·         │          ╰── It can not be redeclared here
     ·         ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/block-scope/syntax/redeclaration/var-redeclaration-attempt-after-function.js:21:1]
- 21 │ 
- 22 │ { function f() {}; var f; }
-    ·            ┬           ┬
-    ·            │           ╰── It can not be redeclared here
-    ·            ╰── `f` has already been declared here
     ╰────
 
   × Identifier `f` has already been declared
@@ -14055,24 +14492,10 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Cannot assign to 'arguments' in strict mode
-    ╭─[language/expressions/function/name-arguments-strict-body.js:17:1]
- 17 │ 
- 18 │ (function arguments() {'use strict';});
-    ·           ─────────
-    ╰────
-
-  × Cannot assign to 'arguments' in strict mode
     ╭─[language/expressions/function/name-arguments-strict.js:16:1]
  16 │ 
  17 │ (function arguments() {});
     ·           ─────────
-    ╰────
-
-  × Cannot assign to 'eval' in strict mode
-    ╭─[language/expressions/function/name-eval-strict-body.js:17:1]
- 17 │ 
- 18 │ (function eval() {'use strict';});
-    ·           ────
     ╰────
 
   × Cannot assign to 'eval' in strict mode
@@ -18000,15 +18423,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·          ╰── `x` has already been declared here
     ╰────
 
-  × Identifier `x` has already been declared
-    ╭─[language/import/dup-bound-names.js:15:1]
- 15 │ 
- 16 │ import { x, y as x } from 'z';
-    ·          ┬       ┬
-    ·          │       ╰── It can not be redeclared here
-    ·          ╰── `x` has already been declared here
-    ╰────
-
   × Keywords cannot contain escape characters
     ╭─[language/import/escaped-as-import-specifier.js:25:1]
  25 │ 
@@ -19535,17 +19949,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·           ╰── It can not be redeclared here
     ╰────
 
-  × Identifier `x` has already been declared
-    ╭─[language/module-code/early-dup-top-function.js:18:1]
- 18 │ 
- 19 │ function x() {}
-    ·          ┬
-    ·          ╰── `x` has already been declared here
- 20 │ function x() {}
-    ·          ┬
-    ·          ╰── It can not be redeclared here
-    ╰────
-
   × Export 'Number' is not defined
     ╭─[language/module-code/early-export-global.js:18:1]
  18 │ 
@@ -20440,17 +20843,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
  14 │ 
  15 │ export default var x;
     ·                ───
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/module-code/parse-err-hoist-lex-fun.js:23:1]
- 23 │ 
- 24 │ var f;
-    ·     ┬
-    ·     ╰── `f` has already been declared here
- 25 │ function f() {}
-    ·          ┬
-    ·          ╰── It can not be redeclared here
     ╰────
 
   × Identifier `g` has already been declared
@@ -29252,30 +29644,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
  46 │   
     ╰────
 
-  × Identifier `x` has already been declared
-    ╭─[language/statements/for/head-const-bound-names-in-stmt.js:19:1]
- 19 │ 
- 20 │ for (const x = 0; false; ) {
-    ·            ┬
-    ·            ╰── `x` has already been declared here
- 21 │   var x;
-    ·       ┬
-    ·       ╰── It can not be redeclared here
- 22 │ }
-    ╰────
-
-  × Identifier `x` has already been declared
-    ╭─[language/statements/for/head-let-bound-names-in-stmt.js:19:1]
- 19 │ 
- 20 │ for (let x; false; ) {
-    ·          ┬
-    ·          ╰── `x` has already been declared here
- 21 │   var x;
-    ·       ┬
-    ·       ╰── It can not be redeclared here
- 22 │ }
-    ╰────
-
   × Invalid function declaration
     ╭─[language/statements/for/labelled-fn-stmt-const.js:17:1]
  17 │ 
@@ -30371,18 +30739,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·             ╰── `x` has already been declared here
     ╰────
 
-  × Identifier `x` has already been declared
-    ╭─[language/statements/for-in/head-const-bound-names-in-stmt.js:16:1]
- 16 │ 
- 17 │ for (const x in {}) {
-    ·            ┬
-    ·            ╰── `x` has already been declared here
- 18 │   var x;
-    ·       ┬
-    ·       ╰── It can not be redeclared here
- 19 │ }
-    ╰────
-
   × `let` cannot be declared as a variable name inside of a `const` declaration
     ╭─[language/statements/for-in/head-const-bound-names-let.js:16:1]
  16 │ 
@@ -30397,18 +30753,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·           ┬  ┬
     ·           │  ╰── It can not be redeclared here
     ·           ╰── `x` has already been declared here
-    ╰────
-
-  × Identifier `x` has already been declared
-    ╭─[language/statements/for-in/head-let-bound-names-in-stmt.js:16:1]
- 16 │ 
- 17 │ for (let x in {}) {
-    ·          ┬
-    ·          ╰── `x` has already been declared here
- 18 │   var x;
-    ·       ┬
-    ·       ╰── It can not be redeclared here
- 19 │ }
     ╰────
 
   × `let` cannot be declared as a variable name inside of a `let` declaration
@@ -31070,18 +31414,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·             ╰── `x` has already been declared here
     ╰────
 
-  × Identifier `x` has already been declared
-    ╭─[language/statements/for-of/head-const-bound-names-in-stmt.js:16:1]
- 16 │ 
- 17 │ for (const x of []) {
-    ·            ┬
-    ·            ╰── `x` has already been declared here
- 18 │   var x;
-    ·       ┬
-    ·       ╰── It can not be redeclared here
- 19 │ }
-    ╰────
-
   × `let` cannot be declared as a variable name inside of a `const` declaration
     ╭─[language/statements/for-of/head-const-bound-names-let.js:16:1]
  16 │ 
@@ -31119,18 +31451,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·           ┬  ┬
     ·           │  ╰── It can not be redeclared here
     ·           ╰── `x` has already been declared here
-    ╰────
-
-  × Identifier `x` has already been declared
-    ╭─[language/statements/for-of/head-let-bound-names-in-stmt.js:16:1]
- 16 │ 
- 17 │ for (let x of []) {
-    ·          ┬
-    ·          ╰── `x` has already been declared here
- 18 │   var x;
-    ·       ┬
-    ·       ╰── It can not be redeclared here
- 19 │ }
     ╰────
 
   × `let` cannot be declared as a variable name inside of a `let` declaration
@@ -31574,24 +31894,10 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Cannot assign to 'arguments' in strict mode
-    ╭─[language/statements/function/name-arguments-strict-body.js:17:1]
- 17 │ 
- 18 │ function arguments() { 'use strict'; }
-    ·          ─────────
-    ╰────
-
-  × Cannot assign to 'arguments' in strict mode
     ╭─[language/statements/function/name-arguments-strict.js:16:1]
  16 │ 
  17 │ function arguments() { }
     ·          ─────────
-    ╰────
-
-  × Cannot assign to 'eval' in strict mode
-    ╭─[language/statements/function/name-eval-strict-body.js:17:1]
- 17 │ 
- 18 │ function eval() { 'use strict'; }
-    ·          ────
     ╰────
 
   × Cannot assign to 'eval' in strict mode
@@ -31734,6 +32040,14 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Cannot use `await` as an identifier in an async context
+    ╭─[language/statements/function/static-init-await-binding-invalid.js:23:1]
+ 23 │   static {
+ 24 │     function await() {}
+    ·              ─────
+ 25 │   }
+    ╰────
+
+  × Cannot use await in class static initialization block
     ╭─[language/statements/function/static-init-await-binding-invalid.js:23:1]
  23 │   static {
  24 │     function await() {}
@@ -33389,15 +33703,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╰────
 
   × Identifier `f` has already been declared
-    ╭─[language/statements/switch/syntax/redeclaration/function-name-redeclaration-attempt-with-function.js:21:1]
- 21 │ 
- 22 │ switch (0) { case 1: function f() {} default: function f() {} }
-    ·                               ┬                        ┬
-    ·                               │                        ╰── It can not be redeclared here
-    ·                               ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
     ╭─[language/statements/switch/syntax/redeclaration/function-name-redeclaration-attempt-with-generator.js:22:1]
  22 │ 
  23 │ switch (0) { case 1: function f() {} default: function* f() {} }
@@ -33410,15 +33715,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ╭─[language/statements/switch/syntax/redeclaration/function-name-redeclaration-attempt-with-let.js:21:1]
  21 │ 
  22 │ switch (0) { case 1: function f() {} default: let f }
-    ·                               ┬                   ┬
-    ·                               │                   ╰── It can not be redeclared here
-    ·                               ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/statements/switch/syntax/redeclaration/function-name-redeclaration-attempt-with-var.js:21:1]
- 21 │ 
- 22 │ switch (0) { case 1: function f() {} default: var f }
     ·                               ┬                   ┬
     ·                               │                   ╰── It can not be redeclared here
     ·                               ╰── `f` has already been declared here
@@ -33601,15 +33897,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
  22 │ switch (0) { case 1: var f; default: const f = 0 }
     ·                          ┬                 ┬
     ·                          │                 ╰── It can not be redeclared here
-    ·                          ╰── `f` has already been declared here
-    ╰────
-
-  × Identifier `f` has already been declared
-    ╭─[language/statements/switch/syntax/redeclaration/var-name-redeclaration-attempt-with-function.js:21:1]
- 21 │ 
- 22 │ switch (0) { case 1: var f; default: function f() {} }
-    ·                          ┬                    ┬
-    ·                          │                    ╰── It can not be redeclared here
     ·                          ╰── `f` has already been declared here
     ╰────
 
@@ -33812,18 +34099,6 @@ Expect Syntax Error: "built-ins/RegExp/prototype/unicodeSets/breaking-change-fro
     ·                 ┬  ┬
     ·                 │  ╰── It can not be redeclared here
     ·                 ╰── `x` has already been declared here
-    ╰────
-
-  × Identifier `e` has already been declared
-    ╭─[language/statements/try/early-catch-function.js:21:1]
- 21 │     try {
- 22 │     } catch (e) {
-    ·              ┬
-    ·              ╰── `e` has already been declared here
- 23 │         function e(){}
-    ·                  ┬
-    ·                  ╰── It can not be redeclared here
- 24 │     }
     ╰────
 
   × Identifier `x` has already been declared

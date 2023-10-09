@@ -26,7 +26,7 @@ pub use crate::{
     ast_builder::AstBuilder,
     ast_kind::AstKind,
     trivia::{Comment, CommentKind, Trivias, TriviasMap},
-    visit::Visit,
+    visit::{SymbolCtx, Visit},
     visit_mut::VisitMut,
 };
 

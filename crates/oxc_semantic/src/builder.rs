@@ -4,7 +4,7 @@ use std::{cell::RefCell, path::PathBuf, rc::Rc, sync::Arc};
 
 use itertools::Itertools;
 #[allow(clippy::wildcard_imports)]
-use oxc_ast::{ast::*, AstKind, Trivias, TriviasMap, Visit};
+use oxc_ast::{ast::*, AstKind, SymbolCtx, Trivias, TriviasMap, Visit};
 use oxc_diagnostics::Error;
 use oxc_span::{Atom, SourceType, Span};
 use oxc_syntax::{module_record::ModuleRecord, operator::AssignmentOperator};
@@ -296,7 +296,7 @@ impl<'a> SemanticBuilder<'a> {
         let symbol_id =
             self.symbols.create_symbol(span, name.clone(), includes, self.current_scope_id);
         self.symbols.add_declaration(self.current_node_id);
-        self.scope.get_bindings_mut(scope_id).insert(name.clone(), symbol_id);
+        // self.scope.get_bindings_mut(scope_id).insert(name.clone(), symbol_id);
         symbol_id
     }
 
@@ -393,6 +393,18 @@ impl<'a> Visit<'a> for SemanticBuilder<'a> {
         self.leave_kind(kind);
         self.pop_ast_node();
     }
+
+    fn visit_binding_identifier(
+        &mut self,
+        ident: &'a BindingIdentifier,
+        (includes, excludes): SymbolCtx,
+    ) {
+        let kind = AstKind::BindingIdentifier(ident);
+        self.enter_node(kind);
+        let symbol_id = self.declare_symbol(ident.span, &ident.name, includes, excludes);
+        ident.symbol_id.set(Some(symbol_id));
+        self.leave_node(kind);
+    }
 }
 
 impl<'a> SemanticBuilder<'a> {
@@ -400,15 +412,15 @@ impl<'a> SemanticBuilder<'a> {
         match kind {
             AstKind::ModuleDeclaration(decl) => {
                 self.current_symbol_flags |= Self::symbol_flag_from_module_declaration(decl);
-                decl.bind(self);
+                // decl.bind(self);
             }
             AstKind::VariableDeclarator(decl) => {
-                decl.bind(self);
+                // decl.bind(self);
                 self.make_all_namespaces_valuelike();
             }
             AstKind::Function(func) => {
                 self.function_stack.push(self.current_node_id);
-                func.bind(self);
+                // func.bind(self);
                 self.make_all_namespaces_valuelike();
             }
             AstKind::ArrowExpression(_) => {
@@ -417,14 +429,14 @@ impl<'a> SemanticBuilder<'a> {
             }
             AstKind::Class(class) => {
                 self.current_node_flags |= NodeFlags::Class;
-                class.bind(self);
+                // class.bind(self);
                 self.make_all_namespaces_valuelike();
             }
             AstKind::FormalParameters(params) => {
-                params.bind(self);
+                // params.bind(self);
             }
             AstKind::CatchClause(clause) => {
-                clause.bind(self);
+                // clause.bind(self);
             }
             AstKind::TSModuleDeclaration(module_declaration) => {
                 module_declaration.bind(self);
@@ -435,21 +447,21 @@ impl<'a> SemanticBuilder<'a> {
                 self.namespace_stack.push(*symbol_id.unwrap());
             }
             AstKind::TSTypeAliasDeclaration(type_alias_declaration) => {
-                type_alias_declaration.bind(self);
+                // type_alias_declaration.bind(self);
             }
             AstKind::TSInterfaceDeclaration(interface_declaration) => {
-                interface_declaration.bind(self);
+                // interface_declaration.bind(self);
             }
             AstKind::TSEnumDeclaration(enum_declaration) => {
-                enum_declaration.bind(self);
+                // enum_declaration.bind(self);
                 // TODO: const enum?
                 self.make_all_namespaces_valuelike();
             }
             AstKind::TSEnumMember(enum_member) => {
-                enum_member.bind(self);
+                // enum_member.bind(self);
             }
             AstKind::TSTypeParameter(type_parameter) => {
-                type_parameter.bind(self);
+                // type_parameter.bind(self);
             }
             AstKind::IdentifierReference(ident) => {
                 self.reference_identifier(ident);

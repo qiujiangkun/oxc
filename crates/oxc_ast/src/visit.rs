@@ -6,10 +6,12 @@
 
 use oxc_allocator::Vec;
 use oxc_span::Span;
-use oxc_syntax::scope::ScopeFlags;
+use oxc_syntax::{scope::ScopeFlags, symbol::SymbolFlags};
 
 #[allow(clippy::wildcard_imports)]
 use crate::{ast::*, ast_kind::AstKind};
+
+pub type SymbolCtx = (/* includes */ SymbolFlags, /* excludes */ SymbolFlags);
 
 /// Syntax tree traversal
 pub trait Visit<'a>: Sized {
@@ -287,7 +289,20 @@ pub trait Visit<'a>: Sized {
         self.enter_scope(ScopeFlags::empty());
         self.enter_node(kind);
         if let Some(param) = &clause.param {
-            self.visit_binding_pattern(param);
+            let (includes, excludes) =
+            // https://tc39.es/ecma262/#sec-variablestatements-in-catch-blocks
+            // It is a Syntax Error if any element of the BoundNames of CatchParameter also occurs in the VarDeclaredNames of Block
+            // unless CatchParameter is CatchParameter : BindingIdentifier
+                if matches!(param.kind, BindingPatternKind::BindingIdentifier(_)) {
+                    (
+                        SymbolFlags::FunctionScopedVariable,
+                        SymbolFlags::FunctionScopedVariableExcludes,
+                    )
+                } else {
+                    (SymbolFlags::BlockScopedVariable, SymbolFlags::BlockScopedVariableExcludes)
+                };
+            let includes = includes | SymbolFlags::CatchVariable;
+            self.visit_binding_pattern(param, (includes, excludes));
         }
         self.visit_statements(&clause.body.body);
         self.leave_node(kind);
@@ -338,7 +353,12 @@ pub trait Visit<'a>: Sized {
     fn visit_variable_declarator(&mut self, declarator: &'a VariableDeclarator<'a>) {
         let kind = AstKind::VariableDeclarator(declarator);
         self.enter_node(kind);
-        self.visit_binding_pattern(&declarator.id);
+        let symbol_ctx = if declarator.kind.is_lexical() {
+            (SymbolFlags::BlockScopedVariable, SymbolFlags::BlockScopedVariableExcludes)
+        } else {
+            (SymbolFlags::FunctionScopedVariable, SymbolFlags::FunctionScopedVariableExcludes)
+        };
+        self.visit_binding_pattern(&declarator.id, symbol_ctx);
         if let Some(init) = &declarator.init {
             self.visit_expression(init);
         }
@@ -349,7 +369,23 @@ pub trait Visit<'a>: Sized {
 
     fn visit_function(&mut self, func: &'a Function<'a>, flags: Option<ScopeFlags>) {
         let kind = AstKind::Function(func);
-        // todo: visit binding identifier with includes, excludes
+        self.enter_node(kind);
+        if let Some(ident) = &func.id {
+            let (includes, excludes) = if func.r#type == FunctionType::FunctionDeclaration {
+                if func.r#async || func.generator {
+                    (SymbolFlags::BlockScopedVariable, SymbolFlags::BlockScopedVariableExcludes)
+                } else {
+                    (
+                        SymbolFlags::FunctionScopedVariable,
+                        SymbolFlags::FunctionScopedVariableExcludes,
+                    )
+                }
+            } else {
+                (SymbolFlags::empty(), SymbolFlags::empty())
+            };
+            let includes = includes | SymbolFlags::Function;
+            self.visit_binding_identifier(ident, (includes, excludes));
+        }
         self.enter_scope({
             let mut flags = flags.unwrap_or(ScopeFlags::empty()) | ScopeFlags::Function;
             if func.is_strict() {
@@ -357,10 +393,6 @@ pub trait Visit<'a>: Sized {
             }
             flags
         });
-        self.enter_node(kind);
-        if let Some(ident) = &func.id {
-            self.visit_binding_identifier(ident);
-        }
         self.visit_formal_parameters(&func.params);
         if let Some(body) = &func.body {
             self.visit_function_body(body);
@@ -388,22 +420,24 @@ pub trait Visit<'a>: Sized {
     fn visit_formal_parameters(&mut self, params: &'a FormalParameters<'a>) {
         let kind = AstKind::FormalParameters(params);
         self.enter_node(kind);
+        let symbol_ctx =
+            (SymbolFlags::FunctionScopedVariable, SymbolFlags::FunctionScopedVariableExcludes);
         for param in &params.items {
-            self.visit_formal_parameter(param);
+            self.visit_formal_parameter(param, symbol_ctx);
         }
         if let Some(rest) = &params.rest {
-            self.visit_rest_element(rest);
+            self.visit_rest_element(rest, symbol_ctx);
         }
         self.leave_node(kind);
     }
 
-    fn visit_formal_parameter(&mut self, param: &'a FormalParameter<'a>) {
+    fn visit_formal_parameter(&mut self, param: &'a FormalParameter<'a>, symbol_ctx: SymbolCtx) {
         let kind = AstKind::FormalParameter(param);
         self.enter_node(kind);
         for decorator in &param.decorators {
             self.visit_decorator(decorator);
         }
-        self.visit_binding_pattern(&param.pattern);
+        self.visit_binding_pattern(&param.pattern, symbol_ctx);
         self.leave_node(kind);
     }
 
@@ -436,7 +470,12 @@ pub trait Visit<'a>: Sized {
         self.enter_node(kind);
 
         if let Some(id) = &class.id {
-            self.visit_binding_identifier(id);
+            let symbol_ctx = if class.r#type == ClassType::ClassDeclaration {
+                (SymbolFlags::Class | SymbolFlags::BlockScopedVariable, SymbolFlags::ClassExcludes)
+            } else {
+                (SymbolFlags::empty(), SymbolFlags::empty())
+            };
+            self.visit_binding_identifier(id, symbol_ctx);
         }
         if let Some(parameters) = &class.type_parameters {
             self.visit_ts_type_parameter_declaration(parameters);
@@ -1099,66 +1138,68 @@ pub trait Visit<'a>: Sized {
 
     /* ----------  Pattern ---------- */
 
-    fn visit_binding_pattern(&mut self, pat: &'a BindingPattern<'a>) {
+    fn visit_binding_pattern(&mut self, pat: &'a BindingPattern<'a>, symbol_ctx: SymbolCtx) {
         match &pat.kind {
             BindingPatternKind::BindingIdentifier(ident) => {
-                self.visit_binding_identifier(ident);
+                self.visit_binding_identifier(ident, symbol_ctx);
             }
-            BindingPatternKind::ObjectPattern(pat) => self.visit_object_pattern(pat),
-            BindingPatternKind::ArrayPattern(pat) => self.visit_array_pattern(pat),
-            BindingPatternKind::AssignmentPattern(pat) => self.visit_assignment_pattern(pat),
+            BindingPatternKind::ObjectPattern(pat) => self.visit_object_pattern(pat, symbol_ctx),
+            BindingPatternKind::ArrayPattern(pat) => self.visit_array_pattern(pat, symbol_ctx),
+            BindingPatternKind::AssignmentPattern(pat) => {
+                self.visit_assignment_pattern(pat, symbol_ctx)
+            }
         }
         if let Some(type_annotation) = &pat.type_annotation {
             self.visit_ts_type_annotation(type_annotation);
         }
     }
 
-    fn visit_binding_identifier(&mut self, ident: &'a BindingIdentifier) {
+    fn visit_binding_identifier(&mut self, ident: &'a BindingIdentifier, _symbol_ctx: SymbolCtx) {
         let kind = AstKind::BindingIdentifier(ident);
         self.enter_node(kind);
         self.leave_node(kind);
     }
 
-    fn visit_object_pattern(&mut self, pat: &'a ObjectPattern<'a>) {
+    fn visit_object_pattern(&mut self, pat: &'a ObjectPattern<'a>, symbol_ctx: SymbolCtx) {
         let kind = AstKind::ObjectPattern(pat);
         self.enter_node(kind);
         for prop in &pat.properties {
-            self.visit_binding_property(prop);
+            self.visit_binding_property(prop, symbol_ctx);
         }
         if let Some(rest) = &pat.rest {
-            self.visit_rest_element(rest);
+            self.visit_rest_element(rest, symbol_ctx);
         }
         self.leave_node(kind);
     }
 
-    fn visit_binding_property(&mut self, prop: &'a BindingProperty<'a>) {
+    fn visit_binding_property(&mut self, prop: &'a BindingProperty<'a>, symbol_ctx: SymbolCtx) {
         self.visit_property_key(&prop.key);
-        self.visit_binding_pattern(&prop.value);
+        self.visit_binding_pattern(&prop.value, symbol_ctx);
     }
 
-    fn visit_array_pattern(&mut self, pat: &'a ArrayPattern<'a>) {
+    fn visit_array_pattern(&mut self, pat: &'a ArrayPattern<'a>, symbol_ctx: SymbolCtx) {
         let kind = AstKind::ArrayPattern(pat);
         self.enter_node(kind);
         for pat in pat.elements.iter().flatten() {
-            self.visit_binding_pattern(pat);
+            self.visit_binding_pattern(pat, symbol_ctx);
         }
         if let Some(rest) = &pat.rest {
-            self.visit_rest_element(rest);
+            self.visit_rest_element(rest, symbol_ctx);
         }
         self.leave_node(kind);
     }
 
-    fn visit_rest_element(&mut self, pat: &'a RestElement<'a>) {
+    fn visit_rest_element(&mut self, pat: &'a RestElement<'a>, symbol_ctx: SymbolCtx) {
         let kind = AstKind::RestElement(pat);
         self.enter_node(kind);
-        self.visit_binding_pattern(&pat.argument);
+        self.visit_binding_pattern(&pat.argument, symbol_ctx);
         self.leave_node(kind);
     }
 
-    fn visit_assignment_pattern(&mut self, pat: &'a AssignmentPattern<'a>) {
+    fn visit_assignment_pattern(&mut self, pat: &'a AssignmentPattern<'a>, symbol_ctx: SymbolCtx) {
         let kind = AstKind::AssignmentPattern(pat);
         self.enter_node(kind);
-        self.visit_binding_pattern(&pat.left);
+        self.visit_binding_pattern(&pat.left, symbol_ctx);
         self.visit_expression(&pat.right);
         self.leave_node(kind);
     }
@@ -1291,15 +1332,18 @@ pub trait Visit<'a>: Sized {
 
     fn visit_import_specifier(&mut self, specifier: &'a ImportSpecifier) {
         // TODO: imported
-        self.visit_binding_identifier(&specifier.local);
+        let symbol_ctx = (SymbolFlags::Import, SymbolFlags::empty());
+        self.visit_binding_identifier(&specifier.local, symbol_ctx);
     }
 
     fn visit_import_default_specifier(&mut self, specifier: &'a ImportDefaultSpecifier) {
-        self.visit_binding_identifier(&specifier.local);
+        let symbol_ctx = (SymbolFlags::Import, SymbolFlags::empty());
+        self.visit_binding_identifier(&specifier.local, symbol_ctx);
     }
 
     fn visit_import_name_specifier(&mut self, specifier: &'a ImportNamespaceSpecifier) {
-        self.visit_binding_identifier(&specifier.local);
+        let symbol_ctx = (SymbolFlags::Import, SymbolFlags::empty());
+        self.visit_binding_identifier(&specifier.local, symbol_ctx);
     }
 
     fn visit_export_all_declaration(&mut self, _decl: &'a ExportAllDeclaration<'a>) {}
@@ -1346,7 +1390,7 @@ pub trait Visit<'a>: Sized {
     fn visit_enum(&mut self, decl: &'a TSEnumDeclaration<'a>) {
         let kind = AstKind::TSEnumDeclaration(decl);
         self.enter_node(kind);
-        self.visit_binding_identifier(&decl.id);
+        self.visit_binding_identifier(&decl.id, (SymbolFlags::empty(), SymbolFlags::empty()));
         self.visit_enum_body(&decl.body);
         self.leave_node(kind);
     }
@@ -1379,7 +1423,7 @@ pub trait Visit<'a>: Sized {
     fn visit_ts_import_equals_declaration(&mut self, decl: &'a TSImportEqualsDeclaration<'a>) {
         let kind = AstKind::TSImportEqualsDeclaration(decl);
         self.enter_node(kind);
-        self.visit_binding_identifier(&decl.id);
+        self.visit_binding_identifier(&decl.id, (SymbolFlags::empty(), SymbolFlags::empty()));
         self.leave_node(kind);
     }
 
@@ -1411,7 +1455,8 @@ pub trait Visit<'a>: Sized {
     fn visit_ts_type_alias_declaration(&mut self, decl: &'a TSTypeAliasDeclaration<'a>) {
         let kind = AstKind::TSTypeAliasDeclaration(decl);
         self.enter_node(kind);
-        self.visit_binding_identifier(&decl.id);
+        let symbol_ctx = (SymbolFlags::TypeAlias, SymbolFlags::TypeAliasExcludes);
+        self.visit_binding_identifier(&decl.id, symbol_ctx);
         if let Some(parameters) = &decl.type_parameters {
             self.visit_ts_type_parameter_declaration(parameters);
         }
@@ -1422,7 +1467,8 @@ pub trait Visit<'a>: Sized {
     fn visit_ts_interface_declaration(&mut self, decl: &'a TSInterfaceDeclaration<'a>) {
         let kind = AstKind::TSInterfaceDeclaration(decl);
         self.enter_node(kind);
-        self.visit_binding_identifier(&decl.id);
+        let symbol_ctx = (SymbolFlags::Interface, SymbolFlags::InterfaceExcludes);
+        self.visit_binding_identifier(&decl.id, symbol_ctx);
         if let Some(parameters) = &decl.type_parameters {
             self.visit_ts_type_parameter_declaration(parameters);
         }

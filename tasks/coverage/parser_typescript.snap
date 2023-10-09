@@ -1,7 +1,7 @@
 parser_typescript Summary:
 AST Parsed     : 5060/5063 (99.94%)
-Positive Passed: 5052/5063 (99.78%)
-Negative Passed: 994/4761 (20.88%)
+Positive Passed: 5044/5063 (99.62%)
+Negative Passed: 992/4761 (20.84%)
 Expect Syntax Error: "compiler/ClassDeclaration10.ts"
 Expect Syntax Error: "compiler/ClassDeclaration11.ts"
 Expect Syntax Error: "compiler/ClassDeclaration13.ts"
@@ -163,7 +163,11 @@ Expect Syntax Error: "compiler/assignmentToReferenceTypes.ts"
 Expect Syntax Error: "compiler/asyncFunctionNoReturnType.ts"
 Expect Syntax Error: "compiler/asyncFunctionReturnExpressionErrorSpans.ts"
 Expect Syntax Error: "compiler/augmentedClassWithPrototypePropertyOnModule.ts"
+Expect Syntax Error: "compiler/augmentedTypesClass2.ts"
+Expect Syntax Error: "compiler/augmentedTypesEnum.ts"
+Expect Syntax Error: "compiler/augmentedTypesEnum2.ts"
 Expect Syntax Error: "compiler/augmentedTypesEnum3.ts"
+Expect Syntax Error: "compiler/augmentedTypesInterface.ts"
 Expect Syntax Error: "compiler/augmentedTypesModules3.ts"
 Expect Syntax Error: "compiler/autolift3.ts"
 Expect Syntax Error: "compiler/autolift4.ts"
@@ -371,7 +375,6 @@ Expect Syntax Error: "compiler/constructorInvocationWithTooFewTypeArgs.ts"
 Expect Syntax Error: "compiler/constructorOverloads3.ts"
 Expect Syntax Error: "compiler/constructorOverloads4.ts"
 Expect Syntax Error: "compiler/constructorOverloads6.ts"
-Expect Syntax Error: "compiler/constructorOverloads7.ts"
 Expect Syntax Error: "compiler/constructorParametersInVariableDeclarations.ts"
 Expect Syntax Error: "compiler/constructorParametersThatShadowExternalNamesInVariableDeclarations.ts"
 Expect Syntax Error: "compiler/constructorReturnsInvalidType.ts"
@@ -559,6 +562,7 @@ Expect Syntax Error: "compiler/enumAssignmentCompat5.ts"
 Expect Syntax Error: "compiler/enumBasics1.ts"
 Expect Syntax Error: "compiler/enumBasics2.ts"
 Expect Syntax Error: "compiler/enumBasics3.ts"
+Expect Syntax Error: "compiler/enumGenericTypeClash.ts"
 Expect Syntax Error: "compiler/enumIdentifierLiterals.ts"
 Expect Syntax Error: "compiler/enumLiteralAssignableToEnumInsideUnion.ts"
 Expect Syntax Error: "compiler/enumPropertyAccess.ts"
@@ -655,7 +659,6 @@ Expect Syntax Error: "compiler/exportDefaultTypeAndClass.ts"
 Expect Syntax Error: "compiler/exportDefaultTypeAndFunctionOverloads.ts"
 Expect Syntax Error: "compiler/exportDefaultTypeClassAndValue.ts"
 Expect Syntax Error: "compiler/exportEqualsClassRedeclarationError.ts"
-Expect Syntax Error: "compiler/exportInterfaceClassAndValue.ts"
 Expect Syntax Error: "compiler/exportInterfaceClassAndValueWithDuplicatesInImportList.ts"
 Expect Syntax Error: "compiler/exportSameNameFuncVar.ts"
 Expect Syntax Error: "compiler/exportSpecifierAndLocalMemberDeclaration.ts"
@@ -1227,7 +1230,6 @@ Expect Syntax Error: "compiler/noImplicitAnyLoopCrash.ts"
 Expect Syntax Error: "compiler/noImplicitAnyMissingGetAccessor.ts"
 Expect Syntax Error: "compiler/noImplicitAnyMissingSetAccessor.ts"
 Expect Syntax Error: "compiler/noImplicitAnyModule.ts"
-Expect Syntax Error: "compiler/noImplicitAnyNamelessParameter.ts"
 Expect Syntax Error: "compiler/noImplicitAnyParametersInAmbientClass.ts"
 Expect Syntax Error: "compiler/noImplicitAnyParametersInAmbientFunctions.ts"
 Expect Syntax Error: "compiler/noImplicitAnyParametersInAmbientModule.ts"
@@ -1438,7 +1440,6 @@ Expect Syntax Error: "compiler/reactDefaultPropsInferenceSuccess.tsx"
 Expect Syntax Error: "compiler/reactImportUnusedInNewJSXEmit.tsx"
 Expect Syntax Error: "compiler/reactNamespaceInvalidInput.tsx"
 Expect Syntax Error: "compiler/reactNamespaceMissingDeclaration.tsx"
-Expect Syntax Error: "compiler/reactReduxLikeDeferredInferenceAllowsAssignment.ts"
 Expect Syntax Error: "compiler/readonlyAssignmentInSubclassOfClassExpression.ts"
 Expect Syntax Error: "compiler/readonlyMembers.ts"
 Expect Syntax Error: "compiler/readonlyTupleAndArrayElaboration.ts"
@@ -1507,6 +1508,8 @@ Expect Syntax Error: "compiler/separate1-1.ts"
 Expect Syntax Error: "compiler/setterWithReturn.ts"
 Expect Syntax Error: "compiler/shadowPrivateMembers.ts"
 Expect Syntax Error: "compiler/shadowedReservedCompilerDeclarationsWithNoEmit.ts"
+Expect Syntax Error: "compiler/shadowingViaLocalValue.ts"
+Expect Syntax Error: "compiler/shadowingViaLocalValueOrBindingElement.ts"
 Expect Syntax Error: "compiler/shorthand-property-es5-es6.ts"
 Expect Syntax Error: "compiler/shorthand-property-es6-amd.ts"
 Expect Syntax Error: "compiler/shorthand-property-es6-es6.ts"
@@ -1526,6 +1529,7 @@ Expect Syntax Error: "compiler/sourceMap-SemiColon1.ts"
 Expect Syntax Error: "compiler/sourceMap-SingleSpace1.ts"
 Expect Syntax Error: "compiler/sourceMap-StringLiteralWithNewLine.ts"
 Expect Syntax Error: "compiler/sourceMapSample.ts"
+Expect Syntax Error: "compiler/sourceMapValidationEnums.ts"
 Expect Syntax Error: "compiler/sourceMapValidationFor.ts"
 Expect Syntax Error: "compiler/specialIntersectionsInMappedTypes.ts"
 Expect Syntax Error: "compiler/specializedSignatureAsCallbackParameter1.ts"
@@ -1605,7 +1609,6 @@ Expect Syntax Error: "compiler/systemModule9.ts"
 Expect Syntax Error: "compiler/taggedTemplateStringsWithCurriedFunction.ts"
 Expect Syntax Error: "compiler/targetTypeBaseCalls.ts"
 Expect Syntax Error: "compiler/targetTypeCastTest.ts"
-Expect Syntax Error: "compiler/targetTypeTest1.ts"
 Expect Syntax Error: "compiler/targetTypeTest3.ts"
 Expect Syntax Error: "compiler/targetTypeVoidFunc.ts"
 Expect Syntax Error: "compiler/templateLiteralIntersection2.ts"
@@ -2151,7 +2154,6 @@ Expect Syntax Error: "conformance/controlFlow/controlFlowIIFE.ts"
 Expect Syntax Error: "conformance/controlFlow/controlFlowIterationErrors.ts"
 Expect Syntax Error: "conformance/controlFlow/controlFlowIterationErrorsAsync.ts"
 Expect Syntax Error: "conformance/controlFlow/controlFlowNullishCoalesce.ts"
-Expect Syntax Error: "conformance/controlFlow/controlFlowOptionalChain.ts"
 Expect Syntax Error: "conformance/controlFlow/controlFlowTypeofObject.ts"
 Expect Syntax Error: "conformance/controlFlow/controlFlowWhileStatement.ts"
 Expect Syntax Error: "conformance/controlFlow/dependentDestructuredVariables.ts"
@@ -2430,6 +2432,7 @@ Expect Syntax Error: "conformance/es6/for-ofStatements/for-of39.ts"
 Expect Syntax Error: "conformance/es6/for-ofStatements/for-of46.ts"
 Expect Syntax Error: "conformance/es6/for-ofStatements/for-of47.ts"
 Expect Syntax Error: "conformance/es6/for-ofStatements/for-of48.ts"
+Expect Syntax Error: "conformance/es6/for-ofStatements/for-of54.ts"
 Expect Syntax Error: "conformance/es6/for-ofStatements/for-of55.ts"
 Expect Syntax Error: "conformance/es6/for-ofStatements/for-of6.ts"
 Expect Syntax Error: "conformance/es6/for-ofStatements/for-of7.ts"
@@ -3746,7 +3749,6 @@ Expect Syntax Error: "conformance/types/typeRelationships/typeInference/genericC
 Expect Syntax Error: "conformance/types/typeRelationships/typeInference/genericClassWithFunctionTypedMemberArguments.ts"
 Expect Syntax Error: "conformance/types/typeRelationships/typeInference/indexSignatureTypeInference.ts"
 Expect Syntax Error: "conformance/types/typeRelationships/typeInference/intraExpressionInferences.ts"
-Expect Syntax Error: "conformance/types/typeRelationships/typeInference/unionTypeInference.ts"
 Expect Syntax Error: "conformance/types/union/contextualTypeWithUnionTypeObjectLiteral.ts"
 Expect Syntax Error: "conformance/types/union/discriminatedUnionTypes1.ts"
 Expect Syntax Error: "conformance/types/union/discriminatedUnionTypes2.ts"
@@ -3769,12 +3771,94 @@ Expect Syntax Error: "conformance/types/unknown/unknownControlFlow.ts"
 Expect Syntax Error: "conformance/types/unknown/unknownType1.ts"
 Expect Syntax Error: "conformance/types/unknown/unknownType2.ts"
 Expect Syntax Error: "conformance/types/witness/witness.ts"
+Expect to Parse: "compiler/ambientClassOverloadForFunction.ts"
+  × Identifier `foo` has already been declared
+   ╭─[compiler/ambientClassOverloadForFunction.ts:1:1]
+ 1 │ declare class foo{};
+   ·               ─┬─
+   ·                ╰── `foo` has already been declared here
+ 2 │ function foo() { return null; }
+   ·          ─┬─
+   ·           ╰── It can not be redeclared here
+   ╰────
+
 Expect to Parse: "compiler/bom-utf16be.ts"
   × Invalid Character `￾`
    ╭─[compiler/bom-utf16be.ts:1:1]
  1 │ ￾瘀愀爀 砀㴀㄀　㬀ഀ਀
    · ─
    ╰────
+
+Expect to Parse: "compiler/coAndContraVariantInferences3.ts"
+  × Identifier `modifiers` has already been declared
+     ╭─[compiler/coAndContraVariantInferences3.ts:75:1]
+  75 │ declare const updateImportDeclaration: {
+  76 │     (node: ImportDeclaration, modifiers: readonly Modifier[] | undefined, importClause: ImportClause | undefined, moduleSpecifier: Expression, assertClause: AssertClause | undefined): ImportDeclaration;
+     ·                               ────┬────
+     ·                                   ╰── `modifiers` has already been declared here
+  77 │     (node: ImportDeclaration, decorators: readonly Decorator[] | undefined, modifiers: readonly Modifier[] | undefined, importClause: ImportClause | undefined, moduleSpecifier: Expression, assertClause: AssertClause | undefined): ImportDeclaration;
+  78 │ }
+  79 │ 
+  80 │ declare function every<T, U extends T>(array: readonly T[], callback: (element: T, index: number) => element is U): array is readonly U[];
+  81 │ declare function every<T, U extends T>(array: readonly T[] | undefined, callback: (element: T, index: number) => element is U): array is readonly U[] | undefined;
+  82 │ declare function every<T>(array: readonly T[] | undefined, callback: (element: T, index: number) => boolean): boolean;
+  83 │ 
+  84 │ declare function isArray(value: any): value is readonly unknown[];
+  85 │ 
+  86 │ declare const DISALLOW_DECORATORS: DeprecationOptions;
+  87 │ 
+  88 │ buildOverload("updateImportDeclaration")
+  89 │     .overload({
+  90 │         0(node: ImportDeclaration, modifiers: readonly Modifier[] | undefined, importClause: ImportClause | undefined, moduleSpecifier: Expression, assertClause: AssertClause | undefined): ImportDeclaration {
+  91 │             return updateImportDeclaration(node, modifiers, importClause, moduleSpecifier, assertClause);
+  92 │         },
+  93 │ 
+  94 │         1(node: ImportDeclaration, _decorators: readonly Decorator[] | undefined, modifiers: readonly Modifier[] | undefined, importClause: ImportClause | undefined, moduleSpecifier: Expression, assertClause: AssertClause | undefined): ImportDeclaration {
+  95 │             return updateImportDeclaration(node, modifiers, importClause, moduleSpecifier, assertClause);
+  96 │         },
+  97 │     })
+  98 │     .bind({
+  99 │         0: ([, modifiers, importClause, moduleSpecifier, assertClause, other]) =>
+ 100 │             (other === undefined) &&
+ 101 │             (modifiers === undefined || every(modifiers, isModifier)) &&
+ 102 │             (importClause === undefined || !isArray(importClause)) &&
+ 103 │             (moduleSpecifier === undefined || isExpression(moduleSpecifier)) &&
+ 104 │             (assertClause === undefined || isAssertClause(assertClause)),
+ 105 │ 
+ 106 │         1: ([, decorators, modifiers, importClause, moduleSpecifier, assertClause]) =>
+ 107 │             (decorators === undefined || every(decorators, isDecorator)) &&
+ 108 │             (modifiers === undefined || isArray(modifiers)) &&
+ 109 │             (importClause === undefined || isImportClause(importClause)) &&
+ 110 │             (moduleSpecifier !== undefined && isExpression(moduleSpecifier)) &&
+ 111 │             (assertClause === undefined || isAssertClause(assertClause)),
+ 112 │     })
+ 113 │     .deprecate({
+ 114 │         1: DISALLOW_DECORATORS
+ 115 │     })
+ 116 │     .finish();
+ 117 │ 
+ 118 │ 
+ 119 │ declare const modifiers: readonly Modifier[] | readonly Decorator[];
+     ·               ────┬────
+     ·                   ╰── It can not be redeclared here
+ 120 │ 
+     ╰────
+
+Expect to Parse: "compiler/contextualTypingOfOptionalMembers.tsx"
+  × Identifier `a` has already been declared
+    ╭─[compiler/contextualTypingOfOptionalMembers.tsx:26:1]
+ 26 │ interface Bar {
+ 27 │     bar: (a: number) => void;
+    ·           ┬
+    ·           ╰── `a` has already been declared here
+ 28 │ }
+    ╰────
+    ╭─[compiler/contextualTypingOfOptionalMembers.tsx:76:1]
+ 76 │ 
+ 77 │ const a = <App4 state={100} foo={s => s} />; // TODO: should be number => number, but JSX resolution is missing an inferential pass
+    ·       ┬
+    ·       ╰── It can not be redeclared here
+    ╰────
 
 Expect to Parse: "compiler/elidedEmbeddedStatementsReplacedWithSemicolon.ts"
   × 'with' statements are not allowed
@@ -3803,6 +3887,82 @@ Expect to Parse: "compiler/emitBundleWithShebangAndPrologueDirectives1.ts"
  7 │ "use strict"
    ╰────
 
+Expect to Parse: "compiler/inferenceAndHKTs.ts"
+  × Identifier `a` has already been declared
+    ╭─[compiler/inferenceAndHKTs.ts:25:1]
+ 25 │ 
+ 26 │ export declare const map: <F extends TypeLambda>(F: TypeClass<F>) => <A, B>(a: Apply<F, A>, f: (a: A) => B) => Apply<F, B>;
+    ·                                                                             ┬
+    ·                                                                             ╰── `a` has already been declared here
+ 27 │ 
+ 28 │ declare const typeClass: TypeClass<TTypeLambda>;
+ 29 │ 
+ 30 │ declare const a: T<number>;
+    ·               ┬
+    ·               ╰── It can not be redeclared here
+ 31 │ 
+    ╰────
+
+Expect to Parse: "compiler/mappedTypeNestedGenericInstantiation.ts"
+  × Identifier `v` has already been declared
+   ╭─[compiler/mappedTypeNestedGenericInstantiation.ts:4:1]
+ 4 │   value(): T;
+ 5 │   mapValues<U>(func: (v: T[keyof T]) => U): Chainable<{[k in keyof T]: U}>;
+   ·                       ┬
+   ·                       ╰── `v` has already been declared here
+ 6 │ }
+   ╰────
+    ╭─[compiler/mappedTypeNestedGenericInstantiation.ts:11:1]
+ 11 │ 
+ 12 │ const v = chain({a: 1, b: 2}).mapValues(square).value();
+    ·       ┬
+    ·       ╰── It can not be redeclared here
+    ╰────
+
+Expect to Parse: "compiler/nonInferrableTypePropagation1.ts"
+  × Identifier `thing` has already been declared
+   ╭─[compiler/nonInferrableTypePropagation1.ts:2:1]
+ 2 │ 
+ 3 │ type Op<I, O> = (thing: Thing<I>) => Thing<O>;
+   ·                  ──┬──
+   ·                    ╰── `thing` has already been declared here
+ 4 │ type Thing<T> = {
+   ╰────
+    ╭─[compiler/nonInferrableTypePropagation1.ts:12:1]
+ 12 │ 
+ 13 │ declare const thing: Thing<number>;
+    ·               ──┬──
+    ·                 ╰── It can not be redeclared here
+ 14 │ 
+    ╰────
+
+Expect to Parse: "compiler/thisInTupleTypeParameterConstraints.ts"
+  × Identifier `x` has already been declared
+    ╭─[compiler/thisInTupleTypeParameterConstraints.ts:20:1]
+ 20 │ declare function f<T extends [(x: number) => number]>(a: T): void;
+ 21 │ let x: [(x: number) => number];
+    ·     ┬    ┬
+    ·     │    ╰── It can not be redeclared here
+    ·     ╰── `x` has already been declared here
+ 22 │ f(x);
+    ╰────
+
+Expect to Parse: "compiler/varianceRepeatedlyPropegatesWithUnreliableFlag.ts"
+  × Identifier `p2` has already been declared
+    ╭─[compiler/varianceRepeatedlyPropegatesWithUnreliableFlag.ts:7:1]
+  7 │ interface I<T> {
+  8 │     fn<K extends keyof T>(p1: P1<Pick<T, K>>, p2: P2<Pick<T, K>>): void;
+    ·                                               ─┬
+    ·                                                ╰── `p2` has already been declared here
+  9 │ }
+ 10 │ 
+ 11 │ const i: I<A & B> = null as any;
+ 12 │ const p2: P2<A> = null as any;
+    ·       ─┬
+    ·        ╰── It can not be redeclared here
+ 13 │ 
+    ╰────
+
 Expect to Parse: "compiler/withStatementInternalComments.ts"
   × 'with' statements are not allowed
    ╭─[compiler/withStatementInternalComments.ts:1:1]
@@ -3810,6 +3970,19 @@ Expect to Parse: "compiler/withStatementInternalComments.ts"
  2 │ /*1*/ with /*2*/ ( /*3*/ false /*4*/ ) /*5*/ {}
    ·       ────
    ╰────
+
+Expect to Parse: "conformance/async/es6/asyncWithVarShadowing_es6.ts"
+  × Identifier `x` has already been declared
+     ╭─[conformance/async/es6/asyncWithVarShadowing_es6.ts:131:1]
+ 131 │     }
+ 132 │     catch ({ x }) {
+     ·              ┬
+     ·              ╰── `x` has already been declared here
+ 133 │         var x;
+     ·             ┬
+     ·             ╰── It can not be redeclared here
+ 134 │     }
+     ╰────
 
 Expect to Parse: "conformance/classes/propertyMemberDeclarations/staticPropertyNameConflicts.ts"
   × Classes may not have a static property named prototype
@@ -3859,19 +4032,6 @@ Expect to Parse: "conformance/classes/propertyMemberDeclarations/staticPropertyN
      ·                ─────────
  162 │         prototype() {} // ok
      ╰────
-
-Expect to Parse: "conformance/es6/for-ofStatements/for-of53.ts"
-  × Identifier `v` has already been declared
-   ╭─[conformance/es6/for-ofStatements/for-of53.ts:1:1]
- 1 │ //@target: ES6
- 2 │ for (let v of []) {
-   ·          ┬
-   ·          ╰── `v` has already been declared here
- 3 │     var v;
-   ·         ┬
-   ·         ╰── It can not be redeclared here
- 4 │ }
-   ╰────
 
 Expect to Parse: "conformance/es6/moduleExportsSystem/topLevelVarHoistingCommonJS.ts"
   × 'with' statements are not allowed
@@ -4141,33 +4301,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
  4 │ 
    ╰────
 
-  × Identifier `c4` has already been declared
-   ╭─[compiler/augmentedTypesClass.ts:5:1]
- 5 │ //// class then enum
- 6 │ class c4 { public foo() { } }
-   ·       ─┬
-   ·        ╰── `c4` has already been declared here
- 7 │ enum c4 { One } // error
-   ·      ─┬
-   ·       ╰── It can not be redeclared here
-   ╰────
-
-  × Identifier `c33` has already been declared
-    ╭─[compiler/augmentedTypesClass2.ts:15:1]
- 15 │ // class then enum 
- 16 │ class c33 {
-    ·       ─┬─
-    ·        ╰── `c33` has already been declared here
- 17 │     foo() {
- 18 │         return 1;
- 19 │     }
- 20 │ }
- 21 │ enum c33 { One };
-    ·      ─┬─
-    ·       ╰── It can not be redeclared here
- 22 │ 
-    ╰────
-
   × Identifier `c2` has already been declared
    ╭─[compiler/augmentedTypesClass2a.ts:1:1]
  1 │ //// class then function
@@ -4203,79 +4336,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ·        ╰── It can not be redeclared here
    ╰────
 
-  × Identifier `e1111` has already been declared
-   ╭─[compiler/augmentedTypesEnum.ts:1:1]
- 1 │ // enum then var
- 2 │ enum e1111 { One } // error
-   ·      ──┬──
-   ·        ╰── `e1111` has already been declared here
- 3 │ var e1111 = 1; // error
-   ·     ──┬──
-   ·       ╰── It can not be redeclared here
- 4 │ 
-   ╰────
-
-  × Identifier `e2` has already been declared
-   ╭─[compiler/augmentedTypesEnum.ts:5:1]
- 5 │ // enum then function
- 6 │ enum e2 { One } // error
-   ·      ─┬
-   ·       ╰── `e2` has already been declared here
- 7 │ function e2() { } // error
-   ·          ─┬
-   ·           ╰── It can not be redeclared here
- 8 │ 
-   ╰────
-
-  × Identifier `e3` has already been declared
-    ╭─[compiler/augmentedTypesEnum.ts:8:1]
-  8 │ 
-  9 │ enum e3 { One } // error
-    ·      ─┬
-    ·       ╰── `e3` has already been declared here
- 10 │ var e3 = () => { } // error
-    ·     ─┬
-    ·      ╰── It can not be redeclared here
- 11 │ 
-    ╰────
-
-  × Identifier `e4` has already been declared
-    ╭─[compiler/augmentedTypesEnum.ts:12:1]
- 12 │ // enum then class
- 13 │ enum e4 { One } // error
-    ·      ─┬
-    ·       ╰── `e4` has already been declared here
- 14 │ class e4 { public foo() { } } // error
-    ·       ─┬
-    ·        ╰── It can not be redeclared here
- 15 │ 
-    ╰────
-
-  × Identifier `e1` has already been declared
-   ╭─[compiler/augmentedTypesEnum2.ts:1:1]
- 1 │ // enum then interface
- 2 │ enum e1 { One } // error
-   ·      ─┬
-   ·       ╰── `e1` has already been declared here
- 3 │ 
- 4 │ interface e1 { // error
-   ·           ─┬
-   ·            ╰── It can not be redeclared here
- 5 │     foo(): void;
-   ╰────
-
-  × Identifier `e2` has already been declared
-    ╭─[compiler/augmentedTypesEnum2.ts:10:1]
- 10 │ // enum then class
- 11 │ enum e2 { One }; // error
-    ·      ─┬
-    ·       ╰── `e2` has already been declared here
- 12 │ class e2 { // error
-    ·       ─┬
-    ·        ╰── It can not be redeclared here
- 13 │     foo() {
-    ╰────
-
   × Identifier `y3` has already been declared
     ╭─[compiler/augmentedTypesFunction.ts:12:1]
  12 │ // function then class
@@ -4298,32 +4358,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
     ·       ─┬─
     ·        ╰── It can not be redeclared here
  18 │ 
-    ╰────
-
-  × Identifier `y4` has already been declared
-    ╭─[compiler/augmentedTypesFunction.ts:19:1]
- 19 │ // function then enum
- 20 │ function y4() { } // error
-    ·          ─┬
-    ·           ╰── `y4` has already been declared here
- 21 │ enum y4 { One } // error
-    ·      ─┬
-    ·       ╰── It can not be redeclared here
- 22 │ 
-    ╰────
-
-  × Identifier `i3` has already been declared
-    ╭─[compiler/augmentedTypesInterface.ts:22:1]
- 22 │ // interface then enum
- 23 │ interface i3 { // error
-    ·           ─┬
-    ·            ╰── `i3` has already been declared here
- 24 │     foo(): void;
- 25 │ }
- 26 │ enum i3 { One }; // error
-    ·      ─┬
-    ·       ╰── It can not be redeclared here
- 27 │ 
     ╰────
 
   × Identifier `m1a` has already been declared
@@ -4445,18 +4479,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
     ·       ─┬─
     ·        ╰── It can not be redeclared here
  18 │ 
-    ╰────
-
-  × Identifier `x5` has already been declared
-    ╭─[compiler/augmentedTypesVar.ts:19:1]
- 19 │ // var then enum
- 20 │ var x5 = 1;
-    ·     ─┬
-    ·      ╰── `x5` has already been declared here
- 21 │ enum x5 { One } // error
-    ·      ─┬
-    ·       ╰── It can not be redeclared here
- 22 │ 
     ╰────
 
   × Expected a semicolon or an implicit semicolon after a statement, but found none
@@ -5263,18 +5285,18 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ·  ──
    ╰────
 
-  × Identifier `y` has already been declared
-    ╭─[compiler/constDeclarationShadowedByVarDeclaration.ts:13:1]
- 13 │ {
- 14 │     const y = 0;
-    ·           ┬
-    ·           ╰── `y` has already been declared here
- 15 │     {
- 16 │         var y = 0;
-    ·             ┬
-    ·             ╰── It can not be redeclared here
- 17 │     }
-    ╰────
+  × Identifier `x` has already been declared
+   ╭─[compiler/constDeclarationShadowedByVarDeclaration.ts:5:1]
+ 5 │ {
+ 6 │     const x = 0;
+   ·           ┬
+   ·           ╰── `x` has already been declared here
+ 7 │ 
+ 8 │     var x = 0;
+   ·         ┬
+   ·         ╰── It can not be redeclared here
+ 9 │ }
+   ╰────
 
   × Identifier `z` has already been declared
     ╭─[compiler/constDeclarationShadowedByVarDeclaration.ts:21:1]
@@ -5516,6 +5538,21 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ·          ╰── it cannot be redeclared here
  8 │ 
    ╰────
+
+  × Identifier `Point` has already been declared
+   ╭─[compiler/constructorOverloads7.ts:1:1]
+ 1 │ declare class Point
+   ·               ──┬──
+   ·                 ╰── `Point` has already been declared here
+ 2 │ {
+   ╰────
+    ╭─[compiler/constructorOverloads7.ts:14:1]
+ 14 │ // to be Point and return type is inferred to be void
+ 15 │ function Point(x, y) {
+    ·          ──┬──
+    ·            ╰── It can not be redeclared here
+ 16 │     this.x = x;
+    ╰────
 
   × Multiple constructor implementations are not allowed.
    ╭─[compiler/constructorOverloads8.ts:1:1]
@@ -6050,16 +6087,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ╰────
   help: Try insert a semicolon here
 
-  × Identifier `X` has already been declared
-   ╭─[compiler/enumGenericTypeClash.ts:1:1]
- 1 │ class X<A,B,C> { }
-   ·       ┬
-   ·       ╰── `X` has already been declared here
- 2 │ enum X { MyVal }
-   ·      ┬
-   ·      ╰── It can not be redeclared here
-   ╰────
-
   × Expected a semicolon or an implicit semicolon after a statement, but found none
    ╭─[compiler/enumMemberResolution.ts:4:1]
  4 │ var x = IgnoreRulesSpecific. // error
@@ -6219,6 +6246,17 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
   × Expected `}` but found `EOF`
    ╭─[compiler/exportInFunction.ts:2:1]
  2 │     export = 0;
+   ╰────
+
+  × Identifier `foo` has already been declared
+   ╭─[compiler/exportInterfaceClassAndValue.ts:1:1]
+ 1 │ export const foo = 1
+   ·              ─┬─
+   ·               ╰── `foo` has already been declared here
+ 2 │ export declare class foo {}
+   ·                      ─┬─
+   ·                       ╰── It can not be redeclared here
+ 3 │ export interface foo {}
    ╰────
 
   × Unexpected token
@@ -6771,19 +6809,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
  13 │ }
     ╰────
 
-  × Identifier `x` has already been declared
-    ╭─[compiler/letAndVarRedeclaration.ts:15:1]
- 15 │ function f1() {
- 16 │     let x;
-    ·         ┬
-    ·         ╰── `x` has already been declared here
- 17 │     {
- 18 │         var x;
-    ·             ┬
-    ·             ╰── It can not be redeclared here
- 19 │     }
-    ╰────
-
   × Identifier `x2` has already been declared
     ╭─[compiler/letAndVarRedeclaration.ts:25:1]
  25 │ module M0 {
@@ -6807,19 +6832,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
     ·              ─┬
     ·               ╰── It can not be redeclared here
  29 │ }
-    ╰────
-
-  × Identifier `x2` has already been declared
-    ╭─[compiler/letAndVarRedeclaration.ts:31:1]
- 31 │ module M1 {
- 32 │     let x2;
-    ·         ─┬
-    ·          ╰── `x2` has already been declared here
- 33 │     {
- 34 │         var x2;
-    ·             ─┬
-    ·              ╰── It can not be redeclared here
- 35 │     }
     ╰────
 
   × Identifier `x11` has already been declared
@@ -7490,6 +7502,49 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
  9 │ 
    ╰────
 
+  × Identifier `C` has already been declared
+   ╭─[compiler/noImplicitAnyNamelessParameter.ts:1:1]
+ 1 │ // @noImplicitAny: true
+ 2 │ class C { }
+   ·       ┬
+   ·       ╰── `C` has already been declared here
+ 3 │ declare var a: { m(...string): void }
+ 4 │ declare var b: (string, C) => void;
+   ·                         ┬
+   ·                         ╰── It can not be redeclared here
+ 5 │ declare var c: { (C, number): void };
+   ╰────
+
+  × Identifier `C` has already been declared
+   ╭─[compiler/noImplicitAnyNamelessParameter.ts:1:1]
+ 1 │ // @noImplicitAny: true
+ 2 │ class C { }
+   ·       ┬
+   ·       ╰── `C` has already been declared here
+ 3 │ declare var a: { m(...string): void }
+ 4 │ declare var b: (string, C) => void;
+ 5 │ declare var c: { (C, number): void };
+   ·                   ┬
+   ·                   ╰── It can not be redeclared here
+ 6 │ declare var d: { m(boolean, C, object, undefined): void }
+   ╰────
+
+  × Identifier `C` has already been declared
+   ╭─[compiler/noImplicitAnyNamelessParameter.ts:1:1]
+ 1 │ // @noImplicitAny: true
+ 2 │ class C { }
+   ·       ┬
+   ·       ╰── `C` has already been declared here
+ 3 │ declare var a: { m(...string): void }
+   ╰────
+   ╭─[compiler/noImplicitAnyNamelessParameter.ts:5:1]
+ 5 │ declare var c: { (C, number): void };
+ 6 │ declare var d: { m(boolean, C, object, undefined): void }
+   ·                             ┬
+   ·                             ╰── It can not be redeclared here
+ 7 │ // note: null and void do not parse correctly without a preceding parameter name
+   ╰────
+
   × Expected a semicolon or an implicit semicolon after a statement, but found none
    ╭─[compiler/numberLiteralsWithLeadingZeros.ts:7:1]
  7 │ 
@@ -8048,6 +8103,72 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ╰────
   help: Try insert a semicolon here
 
+  × Identifier `mapDispatchToProps` has already been declared
+     ╭─[compiler/reactReduxLikeDeferredInferenceAllowsAssignment.ts:82:1]
+  82 │     mapStateToProps: null | undefined,
+  83 │     mapDispatchToProps: TDispatchProps
+     ·     ─────────┬────────
+     ·              ╰── `mapDispatchToProps` has already been declared here
+  84 │   ): InferableComponentEnhancerWithProps<
+  85 │     ResolveThunks<TDispatchProps>,
+  86 │     TOwnProps
+  87 │   >;
+  88 │ };
+  89 │ 
+  90 │ type InferThunkActionCreatorType<
+  91 │   TActionCreator extends (...args: any[]) => any
+  92 │ > = TActionCreator extends (
+  93 │   ...args: infer TParams
+  94 │ ) => (...args: any[]) => infer TReturn
+  95 │   ? (...args: TParams) => TReturn
+  96 │   : TActionCreator;
+  97 │ 
+  98 │ type HandleThunkActionCreator<TActionCreator> = TActionCreator extends (
+  99 │   ...args: any[]
+ 100 │ ) => any
+ 101 │   ? InferThunkActionCreatorType<TActionCreator>
+ 102 │   : TActionCreator;
+ 103 │ 
+ 104 │ type ResolveThunks<TDispatchProps> = TDispatchProps extends {
+ 105 │   [key: string]: any;
+ 106 │ }
+ 107 │   ? { [C in keyof TDispatchProps]: HandleThunkActionCreator<TDispatchProps[C]> }
+ 108 │   : TDispatchProps;
+ 109 │ 
+ 110 │ interface Dispatch<A extends Action = AnyAction> {
+ 111 │   <T extends A>(action: T): T;
+ 112 │ }
+ 113 │ interface Action<T = any> {
+ 114 │   type: T;
+ 115 │ }
+ 116 │ interface AnyAction extends Action {
+ 117 │   [extraProps: string]: any;
+ 118 │ }
+ 119 │ 
+ 120 │ const simpleAction = (payload: boolean) => ({
+ 121 │   type: "SIMPLE_ACTION",
+ 122 │   payload
+ 123 │ });
+ 124 │ const thunkAction = (param1: number, param2: string) => async (
+ 125 │   dispatch: Dispatch,
+ 126 │   { foo }: OwnProps
+ 127 │ ) => {
+ 128 │   return foo;
+ 129 │ };
+ 130 │ interface OwnProps {
+ 131 │   foo: string;
+ 132 │ }
+ 133 │ interface TestComponentProps extends OwnProps {
+ 134 │   simpleAction: typeof simpleAction;
+ 135 │   thunkAction(param1: number, param2: string): Promise<string>;
+ 136 │ }
+ 137 │ class TestComponent extends Component<TestComponentProps> {}
+ 138 │ const mapDispatchToProps = { simpleAction, thunkAction };
+     ·       ─────────┬────────
+     ·                ╰── It can not be redeclared here
+ 139 │ 
+     ╰────
+
   × Expected `,` but found `Identifier`
    ╭─[compiler/readonlyInNonPropertyParameters.ts:7:1]
  7 │ }
@@ -8154,107 +8275,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
  4 │ 
    ╰────
 
-  × Identifier `x` has already been declared
-   ╭─[compiler/shadowingViaLocalValue.ts:1:1]
- 1 │ {
- 2 │     let x;
-   ·         ┬
-   ·         ╰── `x` has already been declared here
- 3 │     {
- 4 │         var x = 1;
-   ·             ┬
-   ·             ╰── It can not be redeclared here
- 5 │     }
-   ╰────
-
-  × Identifier `x1` has already been declared
-    ╭─[compiler/shadowingViaLocalValue.ts:8:1]
-  8 │ {
-  9 │     let x1;
-    ·         ─┬
-    ·          ╰── `x1` has already been declared here
- 10 │     {
- 11 │         for (var x1 = 0; ;);
-    ·                  ─┬
-    ·                   ╰── It can not be redeclared here
- 12 │     }
-    ╰────
-
-  × Identifier `x` has already been declared
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:1:1]
- 1 │ if (true) {
- 2 │     let x;
-   ·         ┬
-   ·         ╰── `x` has already been declared here
- 3 │     if (true) {
- 4 │         var x = 0; // Error
-   ·             ┬
-   ·             ╰── It can not be redeclared here
- 5 │         var { x = 0 } = { x: 0 }; // Error
-   ╰────
-
-  × Identifier `x` has already been declared
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:1:1]
- 1 │ if (true) {
- 2 │     let x;
-   ·         ┬
-   ·         ╰── `x` has already been declared here
- 3 │     if (true) {
- 4 │         var x = 0; // Error
- 5 │         var { x = 0 } = { x: 0 }; // Error
-   ·               ┬
-   ·               ╰── It can not be redeclared here
- 6 │         var { x: x = 0 } = { x: 0 }; // Error
-   ╰────
-
-  × Identifier `x` has already been declared
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:1:1]
- 1 │ if (true) {
- 2 │     let x;
-   ·         ┬
-   ·         ╰── `x` has already been declared here
- 3 │     if (true) {
-   ╰────
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:5:1]
- 5 │         var { x = 0 } = { x: 0 }; // Error
- 6 │         var { x: x = 0 } = { x: 0 }; // Error
-   ·                  ┬
-   ·                  ╰── It can not be redeclared here
- 7 │         var { x } = { x: 0 }; // Error
-   ╰────
-
-  × Identifier `x` has already been declared
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:1:1]
- 1 │ if (true) {
- 2 │     let x;
-   ·         ┬
-   ·         ╰── `x` has already been declared here
- 3 │     if (true) {
-   ╰────
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:6:1]
- 6 │         var { x: x = 0 } = { x: 0 }; // Error
- 7 │         var { x } = { x: 0 }; // Error
-   ·               ┬
-   ·               ╰── It can not be redeclared here
- 8 │         var { x: x } = { x: 0 }; // Error
-   ╰────
-
-  × Identifier `x` has already been declared
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:1:1]
- 1 │ if (true) {
- 2 │     let x;
-   ·         ┬
-   ·         ╰── `x` has already been declared here
- 3 │     if (true) {
-   ╰────
-   ╭─[compiler/shadowingViaLocalValueOrBindingElement.ts:7:1]
- 7 │         var { x } = { x: 0 }; // Error
- 8 │         var { x: x } = { x: 0 }; // Error
-   ·                  ┬
-   ·                  ╰── It can not be redeclared here
- 9 │     }
-   ╰────
-
   × Invalid Character `!`
    ╭─[compiler/shebangError.ts:2:1]
  2 │ var foo = 'Shebang is only allowed on the first line';
@@ -8290,19 +8310,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ╭─[compiler/slashBeforeVariableDeclaration1.ts:1:1]
  1 │ \ declare var v;
    · ─────────
-   ╰────
-
-  × Identifier `x` has already been declared
-   ╭─[compiler/sourceMapValidationEnums.ts:2:1]
- 2 │ enum e {
- 3 │     x,
-   ·     ┬
-   ·     ╰── `x` has already been declared here
- 4 │     y,
- 5 │     x
-   ·     ┬
-   ·     ╰── It can not be redeclared here
- 6 │ }
    ╰────
 
   × 'with' statements are not allowed
@@ -9162,6 +9169,39 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
  6 │ // Incomplete call, not enough parameters, at EOF.
  7 │ f `123qdawdrqw${ 1 }${
    ╰────
+
+  × Identifier `Point` has already been declared
+   ╭─[compiler/targetTypeTest1.ts:1:1]
+ 1 │ declare class Point
+   ·               ──┬──
+   ·                 ╰── `Point` has already been declared here
+ 2 │ {
+   ╰────
+    ╭─[compiler/targetTypeTest1.ts:13:1]
+ 13 │ // to be Point and return type is inferred to be void
+ 14 │ function Point(x, y) {
+    ·          ──┬──
+    ·            ╰── It can not be redeclared here
+ 15 │     this.x = x;
+    ╰────
+
+  × Identifier `C` has already been declared
+    ╭─[compiler/targetTypeTest1.ts:52:1]
+ 52 │ 
+ 53 │ declare class C {
+    ·               ┬
+    ·               ╰── `C` has already been declared here
+ 54 │     constructor(a:number, b:number);
+ 55 │     public a : number;
+ 56 │     public b: number;    
+ 57 │     C1M1(c:number,d:number):number;
+ 58 │ } 
+ 59 │ 
+ 60 │ function C(a,b) {
+    ·          ┬
+    ·          ╰── It can not be redeclared here
+ 61 │     this.a=a;
+    ╰────
 
   × Bad escape sequence in untagged template literal
    ╭─[compiler/templateLiteralEscapeSequence.ts:2:1]
@@ -10039,6 +10079,30 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
     ·                ─┬─
     ·                 ╰── It can not be redeclared here
  18 │ 
+    ╰────
+
+  × Identifier `DCC1` has already been declared
+    ╭─[conformance/classes/classDeclarations/classAbstractKeyword/classAbstractMergedDeclaration.ts:24:1]
+ 24 │ 
+ 25 │ declare abstract class DCC1 {}
+    ·                        ──┬─
+    ·                          ╰── `DCC1` has already been declared here
+ 26 │ declare class DCC1 {}
+    ·               ──┬─
+    ·                 ╰── It can not be redeclared here
+ 27 │ 
+    ╰────
+
+  × Identifier `DCC2` has already been declared
+    ╭─[conformance/classes/classDeclarations/classAbstractKeyword/classAbstractMergedDeclaration.ts:27:1]
+ 27 │ 
+ 28 │ declare class DCC2 {}
+    ·               ──┬─
+    ·                 ╰── `DCC2` has already been declared here
+ 29 │ declare abstract class DCC2 {}
+    ·                        ──┬─
+    ·                          ╰── It can not be redeclared here
+ 30 │ 
     ╰────
 
   × Expected `(` but found `Identifier`
@@ -11646,6 +11710,45 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
  168 │     get p2(): asserts this is string;
      ╰────
 
+  × Identifier `x` has already been declared
+    ╭─[conformance/controlFlow/controlFlowOptionalChain.ts:27:1]
+ 27 │ // type predicates
+ 28 │ declare const f: undefined | ((x: any) => x is number);
+    ·                                ┬
+    ·                                ╰── `x` has already been declared here
+ 29 │ declare const x: string | number;
+    ·               ┬
+    ·               ╰── It can not be redeclared here
+ 30 │ if (f?.(x)) {
+    ╰────
+
+  × Identifier `x` has already been declared
+    ╭─[conformance/controlFlow/controlFlowOptionalChain.ts:27:1]
+ 27 │ // type predicates
+ 28 │ declare const f: undefined | ((x: any) => x is number);
+    ·                                ┬
+    ·                                ╰── `x` has already been declared here
+ 29 │ declare const x: string | number;
+ 30 │ if (f?.(x)) {
+ 31 │     x; // number
+ 32 │     f; // (x: any) => x is number
+ 33 │     f(x);
+ 34 │ }
+ 35 │ else {
+ 36 │     x;
+ 37 │     f;
+ 38 │     f(x);
+ 39 │ }
+ 40 │ x;
+ 41 │ f;
+ 42 │ f(x);
+ 43 │ 
+ 44 │ declare const o2: { f(x: any): x is number; } | undefined;
+    ·                       ┬
+    ·                       ╰── It can not be redeclared here
+ 45 │ if (o2?.f(x)) {
+    ╰────
+
   × Unexpected token
     ╭─[conformance/controlFlow/definiteAssignmentAssertions.ts:71:1]
  71 │ function f4() {
@@ -12476,18 +12579,6 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ·           ┬  ┬
    ·           │  ╰── It can not be redeclared here
    ·           ╰── `v` has already been declared here
-   ╰────
-
-  × Identifier `v` has already been declared
-   ╭─[conformance/es6/for-ofStatements/for-of54.ts:1:1]
- 1 │ //@target: ES6
- 2 │ for (let v of []) {
-   ·          ┬
-   ·          ╰── `v` has already been declared here
- 3 │     var v = 0;
-   ·         ┬
-   ·         ╰── It can not be redeclared here
- 4 │ }
    ╰────
 
   × Cannot use `yield` as an identifier in a generator context
@@ -19298,4 +19389,28 @@ Expect to Parse: "conformance/salsa/plainJSRedeclare3.ts"
    ·            ──
  5 │ type T2<out out> = T2 // Error: circularly references 
    ╰────
+
+  × Identifier `x` has already been declared
+    ╭─[conformance/types/typeRelationships/typeInference/unionTypeInference.ts:36:1]
+ 36 │ export interface Foo<T> {
+ 37 │     then<U>(f: (x: T) => U | Foo<U>, g: U): Foo<U>;
+    ·                 ┬
+    ·                 ╰── `x` has already been declared here
+ 38 │ }
+ 39 │ export interface Bar<T> {
+ 40 │     then<S>(f: (x: T) => S | Bar<S>, g: S): Bar<S>;
+ 41 │ }
+ 42 │ 
+ 43 │ function qux(p1: Foo<void>, p2: Bar<void>) {
+ 44 │     p1 = p2;
+ 45 │ }
+ 46 │ 
+ 47 │ // Repros from #32434
+ 48 │ 
+ 49 │ declare function foo<T>(x: T | Promise<T>): void;
+ 50 │ declare let x: false | Promise<true>;
+    ·             ┬
+    ·             ╰── It can not be redeclared here
+ 51 │ foo(x);
+    ╰────
 

@@ -4,7 +4,7 @@
 //! * <https://github.com/prettier/prettier/blob/main/commands.md>
 
 use oxc_allocator::{Box, String, Vec};
-use std::fmt;
+use std::{cell::RefCell, fmt};
 
 use crate::{array, line, ss, Prettier};
 
@@ -34,6 +34,10 @@ pub enum Doc<'a> {
     Hardline,
     /// Print something if the current `group` or the current element of `fill` breaks and something else if it doesn't.
     IfBreak(Box<'a, Doc<'a>>),
+    /// This is an alternative type of group which behaves like text layout:
+    /// it's going to add a break whenever the next element doesn't fit in the line anymore.
+    /// The difference with `group` is that it's not going to break all the separators, just the ones that are at the end of lines.
+    Fill(Fill<'a>),
 }
 
 #[derive(Debug)]
@@ -45,6 +49,26 @@ pub struct Group<'a> {
 impl<'a> Group<'a> {
     pub fn new(contents: Vec<'a, Doc<'a>>, should_break: bool) -> Self {
         Self { contents, should_break }
+    }
+}
+
+#[derive(Debug)]
+pub struct Fill<'a> {
+    pub parts: RefCell<Vec<'a, Doc<'a>>>,
+}
+
+impl<'a> Fill<'a> {
+    pub fn new(docs: Vec<'a, Doc<'a>>) -> Self {
+        Self { parts: RefCell::new(docs) }
+    }
+    pub fn drain_out_pair(&self) -> Option<(Doc<'a>, Doc<'a>)> {
+        let mut parts = self.parts.borrow_mut();
+        if parts.len() < 2 {
+            return None;
+        }
+        let first = parts.remove(0);
+        let second = parts.remove(0);
+        Some((first, second))
     }
 }
 
@@ -167,6 +191,7 @@ fn print_doc_to_debug(doc: &Doc<'_>) -> std::string::String {
             string.push_str(&print_doc_to_debug(break_contents));
             string.push(')');
         }
+        Doc::Fill(_fill) => string.push_str("fill"),
     }
 
     string

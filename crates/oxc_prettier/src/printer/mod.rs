@@ -60,6 +60,8 @@ impl<'a> Printer<'a> {
                 Doc::Softline => self.handle_softline(indent, mode),
                 Doc::Hardline => self.handle_hardline(indent),
                 Doc::IfBreak(doc) => self.handle_if_break(doc.unbox(), indent, mode),
+                // TODO: need refactor `fits` to accept `cmd` instead of `doc`.
+                Doc::Fill(_) => {}
             }
         }
     }
@@ -204,6 +206,7 @@ impl<'a> Printer<'a> {
                 Doc::Hardline => {
                     return true;
                 }
+                Doc::Fill(_) => return true,
             }
 
             if remaining_width < 0 {

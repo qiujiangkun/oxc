@@ -2023,7 +2023,7 @@ pub struct ExportAllDeclaration<'a> {
     pub exported: Option<ModuleExportName>,
     pub source: StringLiteral,
     pub with_clause: Option<WithClause<'a>>, // Some(vec![]) for empty assertion
-    pub export_kind: ImportOrExportKind,              // `export type *`
+    pub export_kind: ImportOrExportKind,     // `export type *`
 }
 
 impl<'a> ExportAllDeclaration<'a> {

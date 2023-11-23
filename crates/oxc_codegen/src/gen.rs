@@ -533,6 +533,11 @@ impl<'a, const MINIFY: bool> Gen<MINIFY> for Declaration<'a> {
                 declaration.gen(p, ctx);
                 p.print_soft_newline();
             }
+            Self::TSEnumDeclaration(decl) => {
+                p.print_space_before_identifier();
+                decl.gen(p, ctx);
+                p.print_soft_newline();
+            }
             _ => {}
         }
     }
@@ -715,6 +720,36 @@ impl<'a, const MINIFY: bool> Gen<MINIFY> for ImportDeclaration<'a> {
         self.source.gen(p, ctx);
         self.assertions.gen(p, ctx);
         p.print_semicolon_after_statement();
+    }
+}
+impl<'a, const MINIFY: bool> Gen<MINIFY> for TSEnumDeclaration<'a> {
+    fn gen(&self, p: &mut Codegen<{ MINIFY }>, ctx: Context) {
+        p.print_str(b"enum ");
+        p.print_str(self.id.name.as_bytes());
+        p.print_hard_space();
+        p.print_block_start();
+        for member in &self.body.members {
+            p.print_indent();
+            member.gen(p, ctx);
+        }
+        p.print_block_end();
+    }
+}
+impl<'a, const MINIFY: bool> Gen<MINIFY> for TSEnumMember<'a> {
+    fn gen(&self, p: &mut Codegen<{ MINIFY }>, ctx: Context) {
+        match &self.id {
+            TSEnumMemberName::Identifier(identifier) => {
+                p.print_str(identifier.name.as_bytes());
+            }
+            TSEnumMemberName::StringLiteral(literal) => literal.gen(p, ctx),
+            _ => panic!("Unexpected enum member name: {:?}", self.id),
+        }
+        if let Some(init) = &self.initializer {
+            p.print_str(b" = ");
+            init.gen_expr(p, Precedence::lowest(), Context::default());
+        }
+        p.print_comma();
+        p.print_soft_newline();
     }
 }
 
